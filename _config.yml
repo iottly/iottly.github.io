@@ -1,1 +1,27 @@
 theme: jekyll-theme-cayman
+
+title: iottly docs
+description: Documentation for iottly
+
+collections:
+    tutorials:
+        output: true
+
+    api:
+        output: true
+
+
+defaults:
+    - scope:
+        path: ""
+        type: tutorials
+      values:
+        layout: default
+    - scope:
+        path: ""
+        type: api
+      values:
+        layout: default
+
+show_downloads: false
+#google_analytics: [Your Google Analytics tracking ID]
