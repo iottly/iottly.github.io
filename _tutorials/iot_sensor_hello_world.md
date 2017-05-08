@@ -17,7 +17,7 @@ published: false
 ## Preconditions
 
 After connecting your Raspberry Pi:
-- [connect Raspberry Pi](https://github.com/tomorrowdata/iottly-docs.github.io/blob/WIP/tutorial_connect_raspberrypi.md){:target="_blank"}  
+- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}}){:target="_blank"}  
 
 you can follow this tutorial.
 
