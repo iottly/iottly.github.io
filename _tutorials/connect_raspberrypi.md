@@ -37,7 +37,7 @@ Notebook setup:
 
 ## Setup the Raspberry Pi from Windows
 
-If your Raspberry Pi is already configured and connect in your local network either wifi or LAN, **skip to** number 6.
+If your Raspberry Pi is already configured and connected in your local network either wifi or LAN, **skip to** number 6.
 
 1. Download the [Raspbian Lite image](https://downloads.raspberrypi.org/raspbian_lite_latest){:target="_blank"} 
 2. Configure the WiFi on the image before flashing:
@@ -106,6 +106,8 @@ From the Iottly project/ DEVICE-CONFIGURATION/ Add device/ Connect your Raspberr
    - connecting the device to Iottly
 
 **Pair the board** while installation is in progress.
+
+
 Communication with the board is encrypted and authenticated. The **Iottly pairing procedure** guarantees the physical identification of the device.
 
 - copy the token from the ssh console
@@ -150,7 +152,7 @@ New Deployment groups
 ## Uninstall agent   
 
 
- To unistall the agent run this command from the home in ssh or putty:
+ Only if you want to unistall the agent, run this command from the home in ssh or putty:
 `iottly-device-agent-py/iottly-device-agent-py/uninstall`
 
 
