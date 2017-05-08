@@ -17,5 +17,5 @@ title: Iottly tutorials
 - You can also add one or more **Project tags**, for example to classify the project in a category
 
 Further instructions on the following tutorials:
-- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}}){:target="_blank"}  
-- [Connect Docker Device to Iottly]({{'tutorials/connect_dev_docker_device' | relative_url}}){:target="_blank"}
+- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}})
+- [Connect Docker Device to Iottly]({{'tutorials/connect_dev_docker_device' | relative_url}})
