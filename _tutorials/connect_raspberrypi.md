@@ -156,7 +156,7 @@ New Deployment groups
 `iottly-device-agent-py/iottly-device-agent-py/uninstall`
 
 
-Further instructions on the following tutorials:
+## Further instructions on the following tutorials:
 - [Get started]({{'tutorials/get_started' | relative_url}})
 
 
