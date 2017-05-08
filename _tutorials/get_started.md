@@ -125,7 +125,7 @@ When a new project is created it comes with two pre built examples:
   - What’s the output now? 
   
   
-![Alt text](/images/echo_command.png) 
+  ![Alt text](/images/echo_command.png) 
 
 
   - The echo command function is handling the incoming message
