@@ -87,7 +87,7 @@ Connect to the board via ssh:
    - From **Linux**: `ssh pi@[detected IP]`
    - From **Windows**: run putty.exe
 
-***>- This is the first and only time you need to connect via ssh on the board
+**>- This is the first and only time you need to connect via ssh on the board**
 
 
 From the Iottly project/ DEVICE-CONFIGURATION/ Add device/ Connect your RaspberryPi:
