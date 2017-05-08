@@ -50,7 +50,7 @@ Create the following message:
 
 
 ## Iottly Code
-In CODING-FIRMWARE panel edit the following snippets:
+Edit the following snippets in CODING-FIRMWARE panel:
 - ```init```:
   - Initialize Pin *#7* to be managed as **output**
   
@@ -96,7 +96,7 @@ def LED_control(command):
 - ![Alt text](/images/flash_botton.png)
 
 
-- Test the “IoT Actuator Hello World” from the Console
+- Test the “IoT Actuator Hello World” from the Console panel
 
 
 
