@@ -28,7 +28,7 @@ Raspberry Pi 2 Pinout reference [here](http://www.jameco.com/Jameco/workshop/cir
 >- No kind of IoT is involved here:
 >- There is no remote control
 >- There is no device intelligence
->- [Let’s add some ...](https://github.com/tomorrowdata/iottly-docs.github.io/blob/WIP/IoT_Actuator_Hello_World.md)
+>- [Let’s add some ...]({{'tutorials/iot_setpoints_hello_world' | relative_url}})
 
 
 
