@@ -26,8 +26,8 @@ In this exercise we are going to use pin *#7* as an **output** (actuator) to con
 
 
 
-Raspberry Pi 2 Pinout reference [here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
-  
+[Raspberry Pi 2/3 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
+[Raspberry Pi zero w Pinout reference here](http://othermod.com/wp-content/uploads/Raspberry-Pi-Model-Zero-Mini-PC.jpg){:target="_blank"}   
 
 Let’s use Iottly to configure  a command to remotely control the LED
 
