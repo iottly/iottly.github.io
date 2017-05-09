@@ -21,8 +21,9 @@ In this exercise we are going to use RPi to power a LED
 - The push button connects the LED anode to the 3.3V (through a 220Ohm resistor)
 ![Alt text](/images/hardware_set_up.png)
 
-[Raspberry Pi 2 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
+[Raspberry Pi 2/3 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
 
+[Raspberry Pi zero w Pinout reference here](http://othermod.com/wp-content/uploads/Raspberry-Pi-Model-Zero-Mini-PC.jpg){:target="_blank"}   
 
 > **ACHIEVEMENT**
 >- No kind of IoT is involved here:
