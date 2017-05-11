@@ -13,7 +13,6 @@ title: Iottly tutorials
 
 
 - Choose **Raspberry Pi** if you want to connect your Raspberry Pi to Iottly. 
-- Choose MQTT protocol
 - You can also add one or more **Project tags**, for example to classify the project in a category
 
 ## Further instructions on the following tutorial:
