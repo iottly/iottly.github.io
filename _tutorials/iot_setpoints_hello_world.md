@@ -32,7 +32,14 @@ you can follow this tutorial.
 ![Alt text](/images/hardware_set_up3.png)
 
 
-Raspberry Pi 2 Pinout reference [here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
+[Raspberry Pi 1 Rev 1 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout.jpg){:target="_blank"} 
+
+[Raspberry Pi 1 Rev 2 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout-rev2.jpg){:target="_blank"} 
+
+[Raspberry Pi 2/3 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
+
+[Raspberry Pi zero w Pinout reference here](http://othermod.com/wp-content/uploads/Raspberry-Pi-Model-Zero-Mini-PC.jpg){:target="_blank"}   
+
 
 
 Let’s use Iottly to configure  a command to remotely control the LEDs
