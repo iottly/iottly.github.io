@@ -6,7 +6,7 @@ title: Iottly tutorials
 
 A curated list of tutorials to get up and running with __Iottly__.
 
-- [Create New Project]({{'tutorials/create_project' | relative_url}})
+- [Create New Project]({{'tutorials/create_project' | relative_url}style="color:red"})
 - [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}})
 - [Get Started]({{'tutorials/get_started' | relative_url}})
 - Work with the THINGS
