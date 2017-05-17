@@ -16,7 +16,7 @@ What you **will learn** in this tutorial:
 
 
 ## Register the Raspberry Pi with Iottly
-##### If your PC is not correctly configurated [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}})
+#### If your PC is not correctly configurated [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}})
 
 Connect to the board via ssh:
 - User: pi
