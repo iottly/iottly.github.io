@@ -4,6 +4,12 @@ title: Iottly tutorials
 
 # How To flash and ssh to your Pi
 
+What you **will learn** in this tutorial:
+
+- How to [Setup the Raspberry Pi from Windows](#setup-the-raspberry-pi-from-windows)
+- How to [Setup the Raspberry Pi from Linux](#setup-the-raspberry-pi-from-linux)
+
+
 ## Setup the Raspberry Pi from Windows
 
 1. Download the [Raspbian Lite image](https://downloads.raspberrypi.org/raspbian_lite_latest){:target="_blank"} 
