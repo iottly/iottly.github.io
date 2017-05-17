@@ -8,9 +8,6 @@ title: Iottly tutorials
 What you **will learn** in this tutorial:
 
 
-- How to [Setup your notebook](#setup-your-notebook) for Windows or Linux
-- How to [Setup the Raspberry Pi from Windows](#setup-the-raspberry-pi-from-windows)
-- How to [Setup the Raspberry Pi from Linux](#setup-the-raspberry-pi-from-linux)
 - How to [Register the Raspberry Pi with Iottly](#register-the-raspberry-pi-with-iottly) for Windows or Linux
 - how to [Remote programming with Iottly](#remote-programming-with-iottly)
 - [Board Attributes](#board-attributes)
@@ -19,7 +16,7 @@ What you **will learn** in this tutorial:
 
 
 ## Register the Raspberry Pi with Iottly
-### If your PC is not correctly configurated [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}})
+##### If your PC is not correctly configurated [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}})
 
 Connect to the board via ssh:
 - User: pi
