@@ -52,7 +52,7 @@ def ask_sensor_data(command):
 
 After building the temperature and humidity control program, we send an alarm message when the temperature exceeds the safety limit
 
-####### In the loop section:
+###### In the loop section:
 ```
   if (temp_value.value > 48): # create a contorl cicle
     alarm = dict(description="temperature too high" , temp_value = temp_value.value) # create a dictionary  
