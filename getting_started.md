@@ -23,11 +23,15 @@ def read_data_from_sensor(sensortype):
     return round_reading(random.uniform(20,80))  
 ```
 The main code in the `loop` section, simply polls sensors' data value every 5 sec, as it would do in a real scenario, and stores it in a global variable (as usual defined in the global section):
-```
+```py
 def loop():
+  """the main loop of your device, running on a dedicated process"""
+
+  # this example simply "polls" the temperature value every 5 sec, 
+  # storing them in global variables (defined in the global section)
+
   temp_value.value = read_data_from_sensor("temperature")
   hum_value.value = read_data_from_sensor("humidity")
-  time.sleep(10)
 ```
 Now, let's say we want to remotely ask the Pi for the temperature and/or humidity value. What we need is a command and the code in the command handler.
 The command is defined through the Messages panel in Iottly, with the following structure:
