@@ -75,8 +75,7 @@ def read_sensor_data(command):
   format of command dict:
   {"read_sensor_data":{"sensortype":"<temperature|humidity|both>"}}
   
-  Command handlers run in a dedicated process (one for all)
-  
+  Command handlers run in a dedicated process (one for all)  
   """
 
   # cmdpars stores the command parameters
@@ -102,14 +101,16 @@ def read_sensor_data(command):
   # prepare a message as the following:
   # {"sensor_data_reading":{
   #    "temperature": <temp value from temp_value.value>,
-  #    "humidity": <h value from temp_value.value>,
+  #    "humidity": <hum value from hum_value.value>,
   #  }}      
   message = {"sensor_data_reading": sensor_data_reading}
   
   # finally send the message over MQTT with the built in iottly function    
   send_msg(message)
 ```
-#### Try this exercise:
+## Try it yourself
+
+### Send an alarm when the temperature is too high
 
 
 After building the temperature and humidity control program, we send an alarm message when the temperature exceeds the safety limit
