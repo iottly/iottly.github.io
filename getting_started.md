@@ -7,11 +7,13 @@ The Getting Started project demonstrates a simple use case where an Elastic Pi i
 To let you try the project without the need of a physical Pi, we created an Elastic Pi (a virtual device) and connected it to your *Getting Started* project.
 
 You can see your Elastic Pi from the *Device Configuration* panel, in connected status:
+
 ![Device Configuration panel](/images/elastic_pi_getting_started_device_conf.png)
 
 ## The code
 
 Move to the *Coding Firmware* panel:
+
 ![Coding Firmware panel](/images/elastic_pi_getting_started_code.png)
 
 ### Generating sensor data readings
@@ -49,12 +51,14 @@ def loop():
 ## Messages to remotely interacting with the Pis
 
 Move to the `Messages` panel:
-![Messages panel](/images/elastic_pi_getting_started_code.png)
+![Messages panel](/images/elastic_pi_getting_started_Messages.png)
 
 ### Interactively ask the Pi for sensor readings
 
-Let's say we want to remotely ask the Pi for the temperature and/or humidity value. What we need is a command and the code in the command handler.
-The command is defined through the Messages panel in Iottly, with the following structure:
+Let's say we want to remotely ask the Pi for the temperature and/or humidity value. 
+What we need is a command and the code to handle it.
+
+The command has been defined with the following structure:
 ```json
 {"ask_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
 ```
@@ -62,23 +66,48 @@ Where:
 - `ask_sensor_data` is the **message type** describing that we will use this command to ask sensor data to the py
 - `sensortype` is a **keyword** accepting 3 possible values, to allow us to ask for temperature, humidity or both.
 
-Iottly automatically generate the command handler for us, all we need to do is to put some code inside, to get the requested data from the global variables and sending it to Iottly through MQTT:
-```
-def ask_sensor_data(command):
-  # based on value of sensortype get the data :
+Iottly automatically generates the command handler for us, all we need to do is to put the logic inside, to get the requested data from the global variables and to send them to Iottly through MQTT:
+```py
+def read_sensor_data(command):
+  """
+  function to handle the command read_sensor_data
+  command description: Make a sensor data reading
+  format of command dict:
+  {"read_sensor_data":{"sensortype":"<temperature|humidity|both>"}}
+  
+  Command handlers run in a dedicated process (one for all)
+  
+  """
+
+  # cmdpars stores the command parameters
+  cmdpars = command["read_sensor_data"]
+  
+  # based on the value of sensortype get the data :
   #   - from temp_value.value, 
   #   - or from hum_value.value
   #   - or from both of them
+ 
+  if (cmdpars["sensortype"] == "temperature"):  
+    sensor_data_reading = {"temperaure":temp_value.value}
+
+  elif (cmdpars["sensortype"] == "humidity"):   
+    sensor_data_reading = {"humidity": hum_value.value}
+
+  elif (cmdpars["sensortype"] == "both"):
+    sensor_data_reading = {
+      "temperaure": temp_value.value,
+      "humidity": hum_value.value
+    }
 
   # prepare a message as the following:
   # {"sensor_data_reading":{
   #    "temperature": <temp value from temp_value.value>,
   #    "humidity": <h value from temp_value.value>,
-  #  }}
-  # the two keys will be both present or not, 
-  # depending on what the command is asking for
-
-  # finally send the message over MQTT with the built in iottly function
+  #  }}      
+  message = {"sensor_data_reading": sensor_data_reading}
+  
+  # finally send the message over MQTT with the built in iottly function    
+  send_msg(message)
 ```
 #### Try this exercise:
 
