@@ -6,7 +6,7 @@ The Getting Started project demonstrates a simple use case where an Elastic Pi i
 To let you try the project without the need of a physical Pi, we created an Elastic Pi and connected it to your *Getting Started* project.
 
 > Elastic Pis are virtual devices hosted on our infrastructure, always connected and programmable from iottly.
-> Just as a real Pi the ElasticPi communicates with iottly using MQTT protocol without exposing any port to the Internet.
+> Just as a real one, the ElasticPi communicates with iottly using MQTT protocol without exposing any port to the Internet.
 > Use the ElasticPi to tinker with iottly and try your new ideas before shipping them to a real Pi.
 > Just keep in mind that there is no GPIO support … for now ;-)
 
