@@ -60,13 +60,13 @@ What we need is a command and the code to handle it.
 
 The command has been defined with the following structure:
 ```json
-{"ask_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
+{"read_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
 ```
 Where:
-- `ask_sensor_data` is the **message type** describing that we will use this command to ask sensor data to the py
+- `read_sensor_data` is the **message type** describing that we will use this command to ask sensor data to the py
 - `sensortype` is a **keyword** accepting 3 possible values, to allow us to ask for temperature, humidity or both.
 
-Iottly automatically generates the command handler for us, all we need to do is to put the logic inside, to get the requested data from the global variables and to send them to Iottly through MQTT:
+Iottly automatically generates the command handler for us, naming the function as the message type. All we need to do is to put the logic inside, to get the requested data from the global variables and to send them to Iottly through MQTT:
 ```py
 def read_sensor_data(command):
   """
@@ -108,6 +108,16 @@ def read_sensor_data(command):
   # finally send the message over MQTT with the built in iottly function    
   send_msg(message)
 ```
+
+### Debug the code in the console
+
+Move to the *Console* panel:
+![Console panel](/images/elastic_pi_getting_started_Console.png)
+
+When the message `read_sensor_data` was defined, iottly took also care of creating a command in the *Console* panel, so that we can immediately test if the code is behaving correctly.
+
+Try to send the command `read_sensor_data`, you should see a message with sensor readings in the *Logs*.
+
 ## Try it by yourself
 
 ### Send an alarm when the temperature is too high
