@@ -51,6 +51,7 @@ def loop():
 ## Messages to remotely interact with the Pis
 
 Move to the `Messages` panel:
+
 ![Messages panel](/images/elastic_pi_getting_started_Messages.png)
 
 ### Interactively ask the Pi for sensor readings
