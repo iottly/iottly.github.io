@@ -3,6 +3,10 @@
 The Getting Started project demonstrates a simple use case where an Elastic Pi is virtually connected to temperature and humidity sensors, regularly acquiring values from an industrial machine.
 
 ## Elastic Pi ?
+
+Move to the *Device Configuration* panel:
+![Device Configuration panel](/images/elastic_pi_getting_started_device_conf.png)
+
 To let you try the project without the need of a physical Pi, we created an Elastic Pi and connected it to your *Getting Started* project.
 
 > Elastic Pis are virtual devices hosted on our infrastructure, always connected and programmable from iottly.
