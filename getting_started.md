@@ -108,18 +108,21 @@ def read_sensor_data(command):
   # finally send the message over MQTT with the built in iottly function    
   send_msg(message)
 ```
-## Try it yourself
+## Try it by yourself
 
 ### Send an alarm when the temperature is too high
 
+Copy this code and paste it in the `loop` function, jsut before the `time.sleep`, to have the Elastic Pi sending an alarm whenever the temperature is greater than 48°.
 
-After building the temperature and humidity control program, we send an alarm message when the temperature exceeds the safety limit
-
-###### In the loop section:
-```
-  if (temp_value.value > 48): # create a contorl cicle
-    alarm = dict(description="temperature too high" , temp_value = temp_value.value) # create a dictionary  
-    message = dict(ALARM = alarm) # create a new dictionary for print alarm in the landing
-    send_msg(message) # send message in the consol pannel 
+```py
+  if temp_value.value > 48:
+    alarm = {"description":"temperature too high", 
+                 "temp_value":temp_value.value}
     
+    message = {"ALARM": alarm}
+  
+    send_msg(message)    
 ```
+
+Click on **Flash over-the-air** to send the new code to the Elastic Pi.
+After the agent restarts, you will see the alarm message in the *Console*, whenever the randomly generated temperature value exceeds 48.
