@@ -13,21 +13,21 @@ def read_data_from_sensor(sensortype):
     # randomly generate humidity value
     return read_value
 ```
-The main code in the `loop` section, simply polls the temperature value every 10 sec, as it would do in a real scenario, and stores it in a global variable (as usual defined in the global section):
+The main code in the `loop` section, simply polls sensors' data value every 5 sec, as it would do in a real scenario, and stores it in a global variable (as usual defined in the global section):
 ```
 def loop():
   temp_value.value = read_data_from_sensor("temperature")
   hum_value.value = read_data_from_sensor("humidity")
   time.sleep(10)
 ```
-Now, let's say we want to remotely ask the Pi to know the temperature and/or humidity value. What we need is a command and the code in the command handler.
+Now, let's say we want to remotely ask the Pi for the temperature and/or humidity value. What we need is a command and the code in the command handler.
 The command is defined through the Messages panel in Iottly, with the following structure:
 ```
-{ask_sensor_data: {"sensortype": "<temperature|humidity|both>"}}
+{"ask_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
 ```
 Where:
-- the message type as ask_sensor_data stating that we will use this command to ask sensor data to the py
-- one keyword sensortype accepting 3 possible values, to allow us to ask for temperature, humidity or both.
+- `ask_sensor_data` is the **message type**, describing that we will use this command to ask sensor data to the py
+- we add one **keyword** `sensortype` accepting 3 possible values, to allow us to ask for temperature, humidity or both.
 
 Iottly automatically generate the command handler for us, all we need to do is to put some code inside, to get the requested data from the global variables and sending it to Iottly through MQTT:
 ```
