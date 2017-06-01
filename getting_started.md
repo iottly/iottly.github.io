@@ -117,6 +117,7 @@ Move to the *Console* panel:
 When the message `read_sensor_data` was defined, iottly took also care of creating a command in the *Console* panel, so that we can immediately test if the code is behaving correctly.
 
 Try to send the command `read_sensor_data`, you should see a message with sensor readings in the *Logs*.
+Newer messages are at the bottom. You can clear and reload the history to get just the first 10 messages.
 
 ## Try it by yourself
 
@@ -135,4 +136,4 @@ Copy this code and paste it in the `loop` function, jsut before the `time.sleep`
 ```
 
 Click on **Flash over-the-air** to send the new code to the Elastic Pi.
-After the agent restarts, you will see the alarm message in the *Console*, whenever the randomly generated temperature value exceeds 48.
+After the agent restarts, you will see the alarm message in the *Console* panel, whenever the randomly generated temperature value exceeds 48.
