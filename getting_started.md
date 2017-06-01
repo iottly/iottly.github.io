@@ -137,3 +137,17 @@ Copy this code and paste it in the `loop` function, jsut before the `time.sleep`
 
 Click on **Flash over-the-air** to send the new code to the Elastic Pi.
 After the agent restarts, you will see the alarm message in the *Console* panel, whenever the randomly generated temperature value exceeds 48.
+
+### Configure the alarm threshold remotely
+
+Let's say we would like to change the alarm threshold over time.
+Lets' sketch how we could do it with iottly, entirely remotely.
+You can try it by yourself!
+
+We need to
+- create a new command to remotely set the threshold
+- define a new global variable for the threshold value
+- fill the new command handler with the code to store the threshold into the variable
+- change the loop function where we hardcoded the 48 value
+
+#### 
