@@ -195,7 +195,7 @@ In the *Coding Firmware* panel, go to the `loop` function and change the alarm c
 
 ## Next steps
 
-Goon, create a new project and connect your Physical Pi to it!!!
+Goon, create a new project and connect your physical Raspberry Pi to it!!!
 
 The full tutorial to work with physical Pis is here: 
 https://iottly.github.io/
