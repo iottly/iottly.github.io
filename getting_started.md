@@ -150,6 +150,7 @@ We need to
 - define a new global variable for the threshold value
 - fill the new command handler with the logic to store the threshold into the variable
 - change the loop function where we hardcoded the 48 value
+- finally flash the new code and test it.
 
 #### Create a new command
 
@@ -180,3 +181,13 @@ Simply add this code at the end of the handler:
   send_msg(change)
   #-----------------------------------------------------------------------------#
 ```
+
+#### Change the loop function
+
+In the *Coding Firmware* panel, go to the `loop` function and change the alarm condition, like this:
+
+```py
+  if temp_value.value > Threshold.value:
+```
+
+#### Finally Flash the new code and test it!!
