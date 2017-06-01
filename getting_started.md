@@ -4,7 +4,7 @@ The Getting Started project demonstrates a simple use case where an Elastic Pi i
 
 ## Elastic Pi ?
 
-To let you try the project without the need of a physical Pi, we created an Elastic Pi (a virtual device) and connected it to your *Getting Started* project.
+To let you paractically try out the project without the need of a physical Pi, we created an Elastic Pi (a virtual device) and connected it to your *Getting Started* project.
 
 You can see your Elastic Pi from the *Device Configuration* panel, in connected status:
 
