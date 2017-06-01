@@ -46,9 +46,17 @@ def loop():
   
   time.sleep(5)
 ```
-Now, let's say we want to remotely ask the Pi for the temperature and/or humidity value. What we need is a command and the code in the command handler.
+
+## Messages to remotely interacting with the Pis
+
+Move to the `Messages` panel:
+![Messages panel](/images/elastic_pi_getting_started_code.png)
+
+### Interactively ask the Pi for sensor readings
+
+Let's say we want to remotely ask the Pi for the temperature and/or humidity value. What we need is a command and the code in the command handler.
 The command is defined through the Messages panel in Iottly, with the following structure:
-```
+```json
 {"ask_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
 ```
 Where:
