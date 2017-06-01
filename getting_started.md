@@ -141,13 +141,42 @@ After the agent restarts, you will see the alarm message in the *Console* panel,
 ### Configure the alarm threshold remotely
 
 Let's say we would like to change the alarm threshold over time.
-Lets' sketch how we could do it with iottly, entirely remotely.
+
+Lets' sketch how we could do it with iottly, **entirely remotely**.
 You can try it by yourself!
 
 We need to
 - create a new command to remotely set the threshold
 - define a new global variable for the threshold value
-- fill the new command handler with the code to store the threshold into the variable
+- fill the new command handler with the logic to store the threshold into the variable
 - change the loop function where we hardcoded the 48 value
 
-#### 
+#### Create a new command
+
+Move to the *Messages* panel and create a command like this one:
+
+![Messages panel](/images/elastic_pi_getting_started_messages_threshold.png)
+
+#### Define a new global variable
+
+Move to the *Coding firmware* panel and add this line to the global section:
+
+```py
+Threshold = multiprocessing.Value('d',45.0)
+```
+
+#### Fill the new command handler with the logic to store the threshold
+
+In the *Coding Firmware* panel, you will find a new command handler `set_alarm_threshold` which have been generated when you created the new command.
+
+Simply add this code at the end of the handler:
+
+```py
+  #-----------------------------------------------------------------------------#
+  # here your code!!
+  limit = cmdpars["threshold"]
+  Threshold.value = float(limit)
+  change = {"new_threshold_value": Threshold.value }
+  send_msg(change)
+  #-----------------------------------------------------------------------------#
+```
