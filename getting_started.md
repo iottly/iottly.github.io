@@ -48,7 +48,7 @@ def loop():
   time.sleep(5)
 ```
 
-## Messages to remotely interacting with the Pis
+## Messages to remotely interact with the Pis
 
 Move to the `Messages` panel:
 ![Messages panel](/images/elastic_pi_getting_started_Messages.png)
