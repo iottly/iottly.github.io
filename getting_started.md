@@ -64,7 +64,7 @@ The command has been defined with the following structure:
 {"read_sensor_data": {"sensortype": "<temperature|humidity|both>"}}
 ```
 Where:
-- `read_sensor_data` is the **message type** describing that we will use this command to ask sensor data to the py
+- `read_sensor_data` is the **message type** describing that we will use this command to read sensor data from the py
 - `sensortype` is a **keyword** accepting 3 possible values, to allow us to ask for temperature, humidity or both.
 
 Iottly automatically generates the command handler for us, naming the function as the message type. All we need to do is to put the logic inside, to get the requested data from the global variables and to send them to Iottly through MQTT:
