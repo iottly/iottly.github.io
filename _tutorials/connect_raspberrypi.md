@@ -17,7 +17,7 @@ What you **will learn** in this tutorial:
 
 ## Register the Raspberry Pi with Iottly
 
-iottly works with Raspbian Lite. **[CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}}) for instructions on how to flash the image and ssh to the RPi.**
+iottly works with Raspbian Lite. [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}}) for instructions on how to flash the image and ssh to the RPi.
 
 Connect to the board via ssh:
 - User: pi
