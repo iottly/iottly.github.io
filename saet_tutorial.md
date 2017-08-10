@@ -97,7 +97,9 @@ When the board is installed with the iottly agent and connected (green light), y
 
 ## Security
 The ssh session is started **from the board** when it receives a specific command via MQTT; so it works from behind any type of firewall, provided the board has outbound connectivity to port 2200 of our server.
+
 The board does not expose any port to the Internet.
+
 The ssh server on the board is normally **off** and is started only when the MQTT message is received.
 
 ## Close the session
