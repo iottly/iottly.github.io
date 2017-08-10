@@ -125,8 +125,8 @@ This feature is provided by two macros available in Saet projects:
 
 - bucket name: `saet-files-repo`
 - login here: 
-  - [https://258881803388.signin.aws.amazon.com/console/s3](https://258881803388.signin.aws.amazon.com/console/s3)
+  - [https://258881803388.signin.aws.amazon.com/console/s3](https://258881803388.signin.aws.amazon.com/console/s3){:target="_blank"} 
   - you receive an __Access Denied__ error: **that's OK**
 - after login, to access the bucket go here:
-  - [https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/](https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/)
+  - [https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/](https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/){:target="_blank"} 
 
