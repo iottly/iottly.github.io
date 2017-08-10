@@ -142,7 +142,7 @@ This feature is provided by two macros available in Saet projects:
 - bucket name: `saet-files-repo`
 - login here: 
   - [https://258881803388.signin.aws.amazon.com/console/s3](https://258881803388.signin.aws.amazon.com/console/s3){:target="_blank"} 
-  - you receive an __Access Denied__ error: **that's OK**
+  - you receive an _Access Denied_ error: **that's OK**
 - after login, to access the bucket go here:
   - [https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/](https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/){:target="_blank"} 
 
@@ -156,13 +156,13 @@ There are three folders in the bucket, corresponding to the three position in wh
 - go to your folder
 - upload the file from your computer to the folder (click upload, or simply drag the file)
 - go to iottly, in the project where the board is connected
-- navigate to the __Console__ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
-- on __download_file__ click __send__
+- on _download_file_ click _send_
 - choose the **source** folder on S3
 - write the name of the file you have already uploaded to S3
 - click send
-- After the download is completed a message will show its status in the __Logs__:
+- After the download is completed a message will show its status in the _Logs_:
 > ```json
 > {
 >   "timestamp": "2017-08-10T12:10:01",
@@ -183,13 +183,13 @@ There are three folders in the bucket, corresponding to the three position in wh
 ## Move a file from the Athena board to your computer
 
 - go to iottly, in the project where the board is connected
-- navigate to the __Console__ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
-- on __upload_file__ click __send__
+- on _upload_file_ click _send_
 - choose the **destination** folder on S3
 - write the **full path** (with file name) of the file you want to send to S3
 - click send
--  After the upload is completed a message will show its status in the __Logs__:
+-  After the upload is completed a message will show its status in the _Logs_:
 > ```json
 > {
 >   "timestamp": "2017-08-10T12:16:32",
