@@ -106,7 +106,7 @@ The ssh server on the board is normally **off** and is started only when the MQT
 
 To close the ssh session:
 - click on the red button _Close_ on top of the terminal
-- please do not type `exit` on the terminal: it breaks something on our ssh service for now
+- **please do not type `exit` on the terminal**: it breaks something on our ssh service for now
   - in case you do it, write to support@iottly.com and just tell it, we'll restart our ssh service
 
 ## Reboot
