@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 
-#title: iottly docs
-#description: Documentation for iottly
+title: iottly docs
+description: Documentation for iottly
 
 collections:
     tutorials:
@@ -17,8 +17,6 @@ defaults:
         type: tutorials
       values:
         layout: default
-        title: iottly docs
-        description: Documentation for iottly
     - scope:
         path: ""
         type: api
