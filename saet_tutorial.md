@@ -89,6 +89,28 @@ Simply repeat the installation procedure from the new project (downloading the i
 
 # Web SSH from iottly
 
+When the board is installed with the iottly agent and connected (green light), you can ssh into the board directly from the web page of the project:
+- navigate to the _Terminal_ tab (the last one on the right)
+- select the board you want to connect to
+- click on _Connect to ... _
+
+
+## Security
+The ssh session is started **from the board** when it receives a specific command via MQTT; so it works from behind any type of firewall, provided the board has outbound connectivity to port 2200 of our server.
+The board does not expose any port to the Internet.
+The ssh server on the board is normally **off** and is started only when the MQTT message is received.
+
+## Close the session
+
+To close the ssh session:
+- click on the red button _Close_ on top of the terminal
+- please do not type `exit` on the terminal: it breaks something on our ssh service for now
+  - in case you do it, write to support@iottly.com and just tell it, we'll restart our ssh service
+
+## Reboot
+
+In case you want to reboot the board from ssh, just remember to close the session with the red button after the reboot.
+
 # Move files to and from the Athena board
 
 
