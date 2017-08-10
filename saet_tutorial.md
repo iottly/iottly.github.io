@@ -175,23 +175,22 @@ The files are always placed in the Athena `/tmp` dir, with the same name they ha
 - choose the **destination** folder on S3
 - write the **full path** (with file name) of the file you want to send to S3
 - click send
-
-After the upload is completed a message will show its status in the __Logs__:
-
-```json
-{
-  "timestamp": "2017-08-10T12:16:32",
-  "devicetimestamp": "2017-08-10T12:16:34",
-  "type": "userdefined",
-  "payload": {
-    "upload_file": {
-      "status": "successful",
-      "dest_file": "/giancarlo/isi.log.0"
-    }
-  }
-}
-```
-
-In case of errors, the message will show some details.
-
-The files are always stored in S3 with the same name they have on the Athena.
+-  After the upload is completed a message will show its status in the __Logs__:
+> ```json
+> {
+>  "timestamp": "2017-08-10T12:16:32",
+>  "devicetimestamp": "2017-08-10T12:16:34",
+>  "type": "userdefined",
+>  "payload": {
+>    "upload_file": {
+>      "status": "successful",
+>      "dest_file": "/giancarlo/isi.log.0"
+>    }
+>  }
+>}
+>```
+- In case of errors, the message will show some details.
+- The files are always stored in S3 with the same name they have on the Athena.
+- access the S3 bucket
+- go to your folder
+- locate and download the file you just uploaded from the board
