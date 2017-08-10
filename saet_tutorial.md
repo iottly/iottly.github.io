@@ -4,11 +4,6 @@ title: Saet Tutorial
 
 # Contents
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
 Tutorial for using iottly with Saet Athena boards:
 
 - [iottly Agent](#iottly-agent)
