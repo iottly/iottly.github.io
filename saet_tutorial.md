@@ -92,7 +92,7 @@ Simply repeat the installation procedure from the new project (downloading the i
 When the board is installed with the iottly agent and connected (green light), you can ssh into the board directly from the web page of the project:
 - navigate to the _Terminal_ tab (the last one on the right)
 - select the board you want to connect to
-- click on _Connect to ... _
+- click on __Connect to ... __
 
 
 ## Security
