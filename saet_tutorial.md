@@ -68,15 +68,24 @@ Tutorial for using iottly with Saet Athena boards:
   - device authentication to iottly ssh server: `/root/.ssh/iottly_ssh_dropbear`
   - iottly private ssh box authentication to device: `/root/.ssh/authorized_keys`
 
-### Tools
-
 ## Reinstall iottly agent within Athena board
+
+When installing iottly on a board with iottly already installed, the previous isntallation is automatically removed.
 
 ### Same project
 
+In case you need to format the Athena board, or simply you uninstalled iottly and want it again, you can just repeat the installation procedure. 
+- If the board preserves its MAC address, it will be binded to the same object on iottly. 
+- In case the board gets a new MAC address, a new objec tin iottly will be generated.
+  - in this case you can remove the old object from iottly.
+
 ### Move the board to another project
 
+Simply repeat the installation procedure from the new project (downloading the installer from the new project).
+
 ## Uninstall the agent from Athena Board
+
+`/iottly/iottly-device-agent-py/iottly-device-agent-py/uninstall`
 
 # Web SSH from iottly
 
