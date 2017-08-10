@@ -37,11 +37,36 @@ Tutorial for using iottly with Saet Athena boards:
 2. wait for the led to start blinking slowly
 3. after a bit of time you should see the green ligth on the board under _Device Configuration_
 
+### Notes
+
+- the installer automatically sets iottly autostart in `/etc/inittab`
+- the installer authomatically fixes the hwclock UTC problem, if found (script `/etc/rc.d/init.d/settime`)
+- the installer authomatically tries to set the time with ntp
+- the installer authomatically set the NAMESERVER to "8.8.8.8", if it is not already set in `/etc/network/network.conf`
+
 ## Agent specifications
 
-### Path and processes
+- Logs:
+  - `/var/iottly-agent/iottly.log`
+  - rolling, 100Kb block, max 2 blocks
+- pid file (to kill iottly):
+  - `/var/iottly-agent/iottly.pid`
+- installation path: 
+  - `/mnt/flash/iottly`
+  - or the link `/iottly -> /mnt/flash/iottly`
+  - python: `/iottly/iottly/bin/python3.6`
+- configuration file:
+  - `/iottly/iottly-device-agent-py/iottly-device-agent-py/settings.json`
 
 ### Security and certificates
+
+- MQTT certificates:
+  - mutual authentication is implemented, with the following certs:
+  - device authentication private certificate: `/iottly/iottly-device-agent-py/iottly-device-agent-py/certs/device.pem`
+  - cloud server is authenticated with a public root certificate: `/iottly/iottly-device-agent-py/iottly-device-agent-py/certs/root_ca.pem`
+- SSH certificates:
+  - device authentication to iottly ssh server: `/root/.ssh/iottly_ssh_dropbear`
+  - iottly private ssh box authentication to device: `/root/.ssh/authorized_keys`
 
 ### Tools
 
