@@ -143,7 +143,7 @@ There are three folder in the bucket, corresponding to the three position in whi
 - navigate to the __Console__ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on __download_file__ click __send__
-- choose the source folder on S3
+- choose the **source** folder on S3
 - write the name of the file you have already uploaded to S3
 - click send
 
@@ -162,5 +162,36 @@ After the download is completed a message will show its status in the __Logs__:
   }
 }```
 
+In case of errors, the message will show some details.
+
 The files are always placed in the Athena `/tmp` dir, with the same name they have on S3.
 
+## Move a file from the Athena board to your computer
+
+- go to iottly, in the project where the board is connected
+- navigate to the __Console__ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on __upload_file__ click __send__
+- choose the **destination** folder on S3
+- write the **full path** (with file name) of the file you want to send to S3
+- click send
+
+After the upload is completed a message will show its status in the __Logs__:
+
+```json
+{
+  "timestamp": "2017-08-10T12:16:32",
+  "devicetimestamp": "2017-08-10T12:16:34",
+  "type": "userdefined",
+  "payload": {
+    "upload_file": {
+      "status": "successful",
+      "dest_file": "/giancarlo/isi.log.0"
+    }
+  }
+}
+```
+
+In case of errors, the message will show some details.
+
+The files are always stored in S3 with the same name they have on the Athena.
