@@ -6,7 +6,23 @@ title: Saet Tutorial
 
 Tutorial for using iottly with Saet Athena boards:
 
-- [Move the board to another project](#move-the-board-to-another-project)
+- [iottly Agent](#iottly-agent)
+  - [Install iottly agent on Athena board](#install-iottly-agent-on-athena-board)
+    - [Install with GPRS](#install-with-gprs)
+    - [Notes](#notes)
+  - [Agent specifications](#agent-specifications)
+    - [Security and certificates](#security-and-certificates)
+  - [Reinstall iottly agent on Athena board](#reinstall-iottly-agent-on-athena-board)
+  - [Uninstall the agent from Athena Board](#uninstall-the-agent-from-athena-board)
+- [Web SSH from iottly](#web-ssh-from-iottly)
+  - [Security](#security)
+  - [Close the session](#close-the-session)
+  - [Reboot](#reboot)
+- [Move files to and from the Athena board](#move-files-to-and-from-the-athena-board)
+  - [Access to Amazon S3 bucket](#access-to-amazon-s3-bucket)
+  - [Bucket folders](#bucket-folders)
+  - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
+  - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
 
 # iottly Agent
 
@@ -68,7 +84,7 @@ Tutorial for using iottly with Saet Athena boards:
   - device authentication to iottly ssh server: `/root/.ssh/iottly_ssh_dropbear`
   - iottly private ssh box authentication to device: `/root/.ssh/authorized_keys`
 
-## Reinstall iottly agent within Athena board
+## Reinstall iottly agent on Athena board
 
 When installing iottly on a board with iottly already installed, the previous isntallation is automatically removed.
 
