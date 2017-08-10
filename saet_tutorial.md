@@ -148,6 +148,7 @@ There are three folder in the bucket, corresponding to the three position in whi
 - click send
 
 After the download is completed a message will show its status in the __Logs__:
+
 ```json
 {
   "timestamp": "2017-08-10T12:10:01",
@@ -160,4 +161,6 @@ After the download is completed a message will show its status in the __Logs__:
     }
   }
 }```
+
 The files are always placed in the Athena `/tmp` dir, with the same name they have on S3.
+
