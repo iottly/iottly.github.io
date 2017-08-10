@@ -12,7 +12,7 @@ Tutorial for using iottly with Saet Athena boards:
 
 ## Install iottly agent on Athena board
 
-1. navigate to iottly: https://staging.iottly.com
+1. navigate to iottly: [https://staging.iottly.com](https://staging.iottly.com)
 2. login
 3. open the project in which you want to place your board
 4. in the _Device Configuration_ tab click on _Add Device_
