@@ -148,7 +148,7 @@ This feature is provided by two macros available in Saet projects:
 
 ## Bucket folders
 
-There are three folder in the bucket, corresponding to the three position in which you can place or get the files.
+There are three folders in the bucket, corresponding to the three position in which you can place or get the files.
 
 ## Move a file from your computer to the Athena board
 
