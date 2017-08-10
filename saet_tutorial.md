@@ -130,3 +130,34 @@ This feature is provided by two macros available in Saet projects:
 - after login, to access the bucket go here:
   - [https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/](https://s3.console.aws.amazon.com/s3/buckets/saet-files-repo/){:target="_blank"} 
 
+## Bucket folders
+
+There are three folder in the bucket, corresponding to the three position in which you can place or get the files.
+
+## Move a file from your computer to the Athena board
+
+- access the S3 bucket
+- go to your folder
+- upload the file from your computer to the folder (click upload, or simply drag the file)
+- go to iottly, in the project where the board is connected
+- navigate to the __Console__ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on __download_file__ click __send__
+- choose the source folder on S3
+- write the name of the file you have already uploaded to S3
+- click send
+
+After the download is completed a message will show its status in the __Logs__:
+```json
+{
+  "timestamp": "2017-08-10T12:10:01",
+  "devicetimestamp": "2017-08-10T12:10:03",
+  "type": "userdefined",
+  "payload": {
+    "download_file": {
+      "status": "successful",
+      "dest_file": "/tmp/isi"
+    }
+  }
+}```
+The files are always placed in the Athena `/tmp` dir, with the same name they have on S3.
