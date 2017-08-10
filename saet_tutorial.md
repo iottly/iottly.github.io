@@ -158,7 +158,8 @@ There are three folder in the bucket, corresponding to the three position in whi
 >       "dest_file": "/tmp/isi"
 >     }
 >   }
-> }```
+> }
+>```
 
 - In case of errors, the message will show some details.
 - The files are always placed in the Athena `/tmp` dir, with the same name they have on S3.
@@ -184,7 +185,8 @@ There are three folder in the bucket, corresponding to the three position in whi
 >       "dest_file": "/giancarlo/isi.log.0"
 >     }
 >   }
-> }```
+> }
+>```
 
 - In case of errors, the message will show some details.
 - The files are always stored in S3 with the same name they have on the Athena.
