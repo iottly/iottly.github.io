@@ -5,6 +5,8 @@ theme: jekyll-theme-cayman
 
 collections:
     tutorials:
+        title: iottly docs
+        description: Documentation for iottly
         output: true
 
     api:
