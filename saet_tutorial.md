@@ -12,7 +12,7 @@ Tutorial for using iottly with Saet Athena boards:
 
 ## Install iottly agent on Athena board
 
-1. navigate to iottly: ![https://staging.iottly.com](https://staging.iottly.com)
+1. navigate to iottly: [https://staging.iottly.com](https://staging.iottly.com)
 2. login
 3. open the project in which you want to place your board
 4. in the _Device Configuration_ tab click on _Add Device_
@@ -124,5 +124,5 @@ This feature is provided by two macros available in Saet projects:
 ## Access to Amazon S3 bucket
 
 - bucket name: `saet-files-repo`
-- login here: ![https://258881803388.signin.aws.amazon.com/console](https://258881803388.signin.aws.amazon.com/console)
+- login here: [https://258881803388.signin.aws.amazon.com/console](https://258881803388.signin.aws.amazon.com/console)
 
