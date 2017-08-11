@@ -29,9 +29,9 @@ Tutorial for using iottly with Saet Athena boards:
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
 - [Example Code Snippets](#Example-Code-Snippets)
-  - [ps to dict](#_ps_to_dict():)
+  - [ps_to_dict](#_ps_to_dict():)
   - [reboot](#_reboot():)
-  - [get saet version](#_get_saet_version():)
+  - [get_saet_version](#_get_saet_version():)
   - [ifconfig](#_ifconfig():)
 
 
