@@ -221,8 +221,10 @@ There are three folders in the bucket, corresponding to the three position in wh
 - locate and download the file you just uploaded from the board
 
 # Example Code Snippets
+
 ## ps to dict
-  ```
+
+```py
   def _ps_to_dict():
    
     def psraw_to_dict(psraw):
@@ -230,19 +232,25 @@ There are three folders in the bucket, corresponding to the three position in wh
       return {ps_headers[index]: item for index, item in enumerate(items) if index in ps_headers.keys()}
     
       return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
-  ```
+```
+
 ## reboot
-  ```
-  def _reboot():
-    return check_output(["reboot","-f"],shell=False)
-  ```
+
+```py
+def _reboot():
+  return check_output(["reboot","-f"],shell=False)
+```
+
 ## get saet version
-  ```
-  def _get_saet_version():
-    return check_output(["/saet/saet","-v"],shell=False).decode().split("\n")
-  ```
+
+```py
+def _get_saet_version():
+  return check_output(["/saet/saet","-v"],shell=False).decode().split("\n")
+```
+
 ## ifconfig
-  ```
+
+```py
   def _ifconfig():
     
     ifcfg = check_output(["ifconfig"],shell=False).decode().split("\n")
@@ -252,5 +260,4 @@ There are three folders in the bucket, corresponding to the three position in wh
       netconf = list(map(lambda l: l.rstrip(), list(f)))
       
     return {'interfaces': ifcfg, 'networkconf': netconf}
-  ```
-  
+```
