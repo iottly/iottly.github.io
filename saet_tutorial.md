@@ -29,10 +29,10 @@ Tutorial for using iottly with Saet Athena boards:
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
 - [Example Code Snippets](#Example-Code-Snippets)
-  - [ps_to_dict](#_ps_to_dict():)
-  - [reboot](#_reboot():)
-  - [get_saet_version](#_get_saet_version():)
-  - [ifconfig](#_ifconfig():)
+  - [ps to dict](#ps-to-dict)
+  - [reboot](#reboot)
+  - [get saet version](#get-saet-version)
+  - [ifconfig](#ifconfig)
 
 
 # iottly Agent
@@ -221,7 +221,7 @@ There are three folders in the bucket, corresponding to the three position in wh
 - locate and download the file you just uploaded from the board
 
 # Example Code Snippets
-## _ps_to_dict():
+## ps to dict
   ```
   def _ps_to_dict():
    
@@ -231,17 +231,17 @@ There are three folders in the bucket, corresponding to the three position in wh
     
       return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
   ```
-## _reboot():
+## reboot
   ```
   def _reboot():
     return check_output(["reboot","-f"],shell=False)
   ```
-## _get_saet_version():
+## get saet version
   ```
   def _get_saet_version():
     return check_output(["/saet/saet","-v"],shell=False).decode().split("\n")
   ```
-## _ifconfig():
+## ifconfig
   ```
   def _ifconfig():
     
