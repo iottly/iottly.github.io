@@ -225,6 +225,10 @@ There are three folders in the bucket, corresponding to the three position in wh
 ## ps to dict
 
 ```py
+from subprocess import check_output
+
+ps_headers = {0: 'pid', 1: 'cmd', 2: 'cmdargs'}
+
 def _ps_to_dict():
 
   def psraw_to_dict(psraw):
@@ -237,6 +241,8 @@ def _ps_to_dict():
 ## reboot
 
 ```py
+from subprocess import check_output
+
 def _reboot():
   return check_output(["reboot","-f"],shell=False)
 ```
@@ -244,6 +250,8 @@ def _reboot():
 ## get saet version
 
 ```py
+from subprocess import check_output
+
 def _get_saet_version():
   return check_output(["/saet/saet","-v"],shell=False).decode().split("\n")
 ```
@@ -251,6 +259,8 @@ def _get_saet_version():
 ## ifconfig
 
 ```py
+from subprocess import check_output
+
 def _ifconfig():
 
   ifcfg = check_output(["ifconfig"],shell=False).decode().split("\n")
