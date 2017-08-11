@@ -28,6 +28,11 @@ Tutorial for using iottly with Saet Athena boards:
   - [Bucket folders](#bucket-folders)
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
+- [Example Code Snippets](#Example Code Snippets)
+  -[_ps_to_dict():](#_ps_to_dict():)
+  -[_reboot():](#_reboot():)
+  -[_get_saet_version():](#_get_saet_version():)
+  -[_ifconfig():](#_ifconfig():)
 
 # iottly Agent
 
@@ -40,7 +45,6 @@ Tutorial for using iottly with Saet Athena boards:
 5. follow the instructions showed there
 6. ...
 7. after a bit of time you should see the green ligth on the board under _Device Configuration_
-
 ### Install with GPRS
 
 **Before installing:**
@@ -214,3 +218,38 @@ There are three folders in the bucket, corresponding to the three position in wh
 - access the S3 bucket
 - go to your folder
 - locate and download the file you just uploaded from the board
+
+# Example Code Snippets
+## _ps_to_dict():
+  ```
+  def _ps_to_dict():
+   
+    def psraw_to_dict(psraw):
+      items = list(map(lambda s: s.strip(), psraw.split('\|')))
+      return {ps_headers[index]: item for index, item in enumerate(items) if index in ps_headers.keys()}
+    
+      return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
+  ```
+## _reboot():
+  ```
+  def _reboot():
+    return check_output(["reboot","-f"],shell=False)
+  ```
+## _get_saet_version():
+  ```
+  def _get_saet_version():
+    return check_output(["/saet/saet","-v"],shell=False).decode().split("\n")
+  ```
+## _ifconfig():
+  ```
+  def _ifconfig():
+    
+    ifcfg = check_output(["ifconfig"],shell=False).decode().split("\n")
+    
+    netconf = []
+    with open('/etc/network/network.conf', 'r') as f:
+      netconf = list(map(lambda l: l.rstrip(), list(f)))
+      
+    return {'interfaces': ifcfg, 'networkconf': netconf}
+  ```
+  
