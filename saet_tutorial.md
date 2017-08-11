@@ -225,13 +225,13 @@ There are three folders in the bucket, corresponding to the three position in wh
 ## ps to dict
 
 ```py
-  def _ps_to_dict():
-   
-    def psraw_to_dict(psraw):
-      items = list(map(lambda s: s.strip(), psraw.split('\|')))
-      return {ps_headers[index]: item for index, item in enumerate(items) if index in ps_headers.keys()}
-    
-      return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
+def _ps_to_dict():
+
+  def psraw_to_dict(psraw):
+    items = list(map(lambda s: s.strip(), psraw.split('\|')))
+    return {ps_headers[index]: item for index, item in enumerate(items) if index in ps_headers.keys()}
+
+      return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
 ```
 
 ## reboot
@@ -251,13 +251,13 @@ def _get_saet_version():
 ## ifconfig
 
 ```py
-  def _ifconfig():
-    
-    ifcfg = check_output(["ifconfig"],shell=False).decode().split("\n")
-    
-    netconf = []
-    with open('/etc/network/network.conf', 'r') as f:
-      netconf = list(map(lambda l: l.rstrip(), list(f)))
-      
-    return {'interfaces': ifcfg, 'networkconf': netconf}
+def _ifconfig():
+
+  ifcfg = check_output(["ifconfig"],shell=False).decode().split("\n")
+
+  netconf = []
+  with open('/etc/network/network.conf', 'r') as f:
+    netconf = list(map(lambda l: l.rstrip(), list(f)))
+
+  return {'interfaces': ifcfg, 'networkconf': netconf}
 ```
