@@ -45,7 +45,7 @@ Tutorial for using iottly with Saet Athena boards:
 4. in the _Device Configuration_ tab click on _Add Device_
 5. follow the instructions showed there
 6. ...
-7. after a bit of time you should see the green ligth on the board under _Device Configuration_
+7. after a bit of time you should see the green light on the board under _Device Configuration_
 ### Install with GPRS
 
 **Before installing:**
@@ -61,14 +61,14 @@ Tutorial for using iottly with Saet Athena boards:
 
 1. insert the SIM card
 2. wait for the led to start blinking slowly
-3. after a bit of time you should see the green ligth on the board under _Device Configuration_
+3. after a bit of time you should see the green light on the board under _Device Configuration_
 
 ### Notes
 
 - the installer automatically sets iottly autostart in `/etc/inittab`
-- the installer authomatically fixes the hwclock UTC problem, if found (script `/etc/rc.d/init.d/settime`)
-- the installer authomatically tries to set the time with ntp
-- the installer authomatically set the NAMESERVER to "8.8.8.8", if it is not already set in `/etc/network/network.conf`
+- the installer automatically fixes the hwclock UTC problem, if found (script `/etc/rc.d/init.d/settime`)
+- the installer automatically tries to set the time with NTP
+- the installer automatically set the NAMESERVER to "8.8.8.8", if it is not already set in `/etc/network/network.conf`
 
 ## Agent specifications
 
@@ -96,13 +96,13 @@ Tutorial for using iottly with Saet Athena boards:
 
 ## Reinstall iottly agent on Athena board
 
-When installing iottly on a board with iottly already installed, the previous isntallation is automatically removed.
+When installing iottly on a board with iottly already installed, the previous installation is automatically removed.
 
 ### Same project
 
 In case you need to format the Athena board, or simply you uninstalled iottly and want it again, you can just repeat the installation procedure. 
 - If the board preserves its MAC address, it will be binded to the same object on iottly. 
-- In case the board gets a new MAC address, a new objec tin iottly will be generated.
+- In case the board gets a new MAC address, a new object in iottly will be generated.
   - in this case you can remove the old object from iottly.
 
 ### Move the board to another project
