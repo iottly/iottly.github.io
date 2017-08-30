@@ -128,16 +128,15 @@ The board does not expose any port to the Internet.
 
 The ssh server on the board is normally **off** and is started only when the MQTT message is received.
 
-## Close the session
+## Close the ssh session
 
-To close the ssh session:
-- click on the red button _Close_ on top of the terminal
-- **please do not type `exit` on the terminal**: it breaks something on our ssh service for now
-  - in case you do it, write to support@iottly.com and just tell it, we'll restart our ssh service
+To close the ssh session you can:
+1. click on the red button _Close_ on top of the terminal, or
+2. type `exit` or `Ctrl D` in the console as usual
 
 ## Reboot
 
-In case you want to reboot the board from ssh, just remember to close the session with the red button after the reboot.
+In case you want to reboot the board from ssh, just do it. The console will automatically close.
 
 # Move files to and from the Athena board
 
