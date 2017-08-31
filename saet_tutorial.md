@@ -28,9 +28,9 @@ Tutorial for using iottly with Saet Athena boards:
   - [Bucket folders](#bucket-folders)
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
-- [Example Code Snippets](#Example-Code-Snippets)
+- [Example Code Snippets](#example-code-snippets)
   - [ps to dict](#ps-to-dict)
-  - [reboot](#reboot)
+  - [reboot code](#reboot-code)
   - [get saet version](#get-saet-version)
   - [ifconfig](#ifconfig)
 
@@ -237,7 +237,7 @@ def _ps_to_dict():
       return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
 ```
 
-## reboot
+## reboot code
 
 ```py
 from subprocess import check_output
