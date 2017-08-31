@@ -234,7 +234,7 @@ def _ps_to_dict():
     items = list(map(lambda s: s.strip(), psraw.split('\|')))
     return {ps_headers[index]: item for index, item in enumerate(items) if index in ps_headers.keys()}
 
-      return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
+  return [psraw_to_dict(psraw) for psraw in check_output(["ps","-axo","%p\|%c\|%a"],shell=False).decode().split("\n")]
 ```
 
 ## reboot code
