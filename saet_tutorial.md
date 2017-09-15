@@ -33,6 +33,10 @@ Tutorial for using iottly with Saet Athena boards:
   - [reboot code](#reboot-code)
   - [get saet version](#get-saet-version)
   - [ifconfig](#ifconfig)
+  - [killall](#killall)
+  - [start tcp dump](#start-tcp-dump)
+  - [stop tcp dump](#stop-tcp-dump)
+  - [gsm signal power](#gsm-signal-power)
 
 
 # iottly Agent
@@ -269,4 +273,138 @@ def _ifconfig():
     netconf = list(map(lambda l: l.rstrip(), list(f)))
 
   return {'interfaces': ifcfg, 'networkconf': netconf}
+```
+# killall
+
+The killall command permit to do kill for isi and saet processes with two parameters  "9" and "15"
+
+```
+def _killall(signal, processname):
+  try:
+    check_output(["killall", "-%s" % (signal), processname],shell=False)
+    return "success"
+  except Exception as e:
+    raise e
+```
+
+# start tcpdump
+
+this command permit to do scan of the ports, with determinate parameters,some parameters are optional and others are standard
+```
+def _start_dump(interface, protocol, port, hex_flag=None, extra_options=None):
+  # formatting date, time according to ISO8601
+  date_time = strftime("%Y-%m-%d-%H-%M-%S", localtime())
+
+  file_name = "/tmp/tcpdump_{}.log".format(date_time)
+  
+  # generating options string
+  pcap_expr =  "{} port {}".format(protocol, port)
+  options =  "-i {}".format(interface) 
+  if hex_flag is not None:
+    options =  "{} {}".format(hex_flag, options)
+  if extra_options is not None:
+    options = "{} {}".format(options, extra_options)
+     
+  # check if iottly_tcpdump.pid exists or not
+  if (os.path.exists('/var/run/iottly_tcpdump.pid')):
+    return ({"FILE EXISTS": "before you can send a new command kill the old process"})
+  
+  # execute tcpdump and redirect stdout to file
+  command = ["tcpdump", options, pcap_expr]
+  with open(file_name, 'w') as log_file:
+    p = Popen(command, shell=True, stdout=log_file)
+  # save PID for killing the process later  
+  with open( '/var/run/iottly_tcpdump.pid', 'w') as pid_file:      
+    pid_file.write( "{}\n{}\n".format(p.pid, file_name))
+    
+  # return the output message  
+  return {'pid' : p.pid , 'log_file' : file_name} 
+
+```
+
+# stop tcpdump
+
+with this command you can decide if kill the process  and send the log to the s3 folder or kill only the process and leave the log file in the athena folder 
+
+```
+def stop_tcpdump(command):
+
+  # generated on 2017-09-06 16:01:07.691024
+
+  # function to handle the command stop_tcpdump
+  # command description: kill process and send to desired folder on S3
+  # format of command dict:
+  # {"stop_tcpdump":{"dest_folder":"[<giancarlo|luigi|luca>]"}}
+
+  # cmdpars stores the command parameters
+  cmdpars = command["stop_tcpdump"]
+  
+  # open file and save the values on the variable
+  with open( '/var/run/iottly_tcpdump.pid', 'r') as pid_file:    
+    content = pid_file.read()
+  pid, log_file_name = content.splitlines()
+  
+  #kill pid process
+  
+  kill(int(pid), children=True)
+  send_msg({"kill": pid})
+  
+  # check if you would send the log_file_name on S3
+  if "dest_folder" in cmdpars:
+    upload_file({"upload_file":{"dest_folder": cmdpars["dest_folder"],
+                              "source_path": log_file_name }})
+    check_call(["rm", log_file_name])
+    
+  # remove the file, to permit a new process  
+  check_call(["rm", '/var/run/iottly_tcpdump.pid'])
+```
+
+# gsm signal power
+
+get the bit error rate and the signal GSM, the log are taken with isi.log file
+```
+def find_last_CSQ_log():
+    """
+    find the last occurence of CSQ log
+    :return the log line or None if no line is found
+    """
+    last_log = None
+
+    # find the last line of CSQ in the log file
+    with open('/tmp/isi.log.0', 'r') as f:
+        for l in f.readlines():
+          if "CSQ" in l:
+            last_log = l
+            
+    if last_log == None:
+      with open('/tmp/isi.log.1', 'r') as F:
+        for L in F.readlines():
+          if "CSQ" in L:
+            last_log = L
+
+    return last_log
+
+def parse_gsm_connection_status():
+    """
+    extrat GSM connection status
+    """
+    if find_last_CSQ_log() == None:
+      return "result not found"
+    else:
+      csq = ""
+      log_s = find_last_CSQ_log()
+      last_reading = log_s[0:24]
+      s = find_last_CSQ_log()
+      csq = s.split("+CSQ:")[1].strip().split(",")
+      signal = int(csq[0])
+      bit_error_rate = int(csq[1])
+      
+      result = {
+        "last_reading": last_reading,
+        "CSQ": {
+          "signal": signal,
+          "bit_error_rate": bit_error_rate
+          }
+        }
+    return result
 ```
