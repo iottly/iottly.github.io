@@ -524,7 +524,6 @@ def _ifconfig():
 ```
 # killall
 
-The killall command permit to do kill for isi and saet processes with two parameters  "9" and "15"
 
 ```
 def _killall(signal, processname):
