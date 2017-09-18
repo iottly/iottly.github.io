@@ -362,7 +362,7 @@ this command return a list of "interfaces"and "networkconf"
     }
   }
   ```
-# saet_version
+# saet version
 this command return a list of version isi and saet
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -412,7 +412,7 @@ this command return a list of version isi and saet
     }
   }
   ```
-# GSM_signal_power 
+# GSM signal power 
 this command return stauts of gsm signal
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -433,7 +433,7 @@ this command return stauts of gsm signal
     }
   }
   ```
-# start_tcpdump
+# start tcpdump
 this command allows to scan of the web interface, with determinate parameters
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -459,7 +459,7 @@ this command allows to scan of the web interface, with determinate parameters
   }
   ```
 
-# stop_tcpdump
+# stop tcpdump
 with this command you can killing the process started from start_tcpdump and you would if possible send to Amazon S3 the log_file with the result 
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
