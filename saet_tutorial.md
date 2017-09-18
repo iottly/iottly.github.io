@@ -235,7 +235,7 @@ There are three folders in the bucket, corresponding to the three position in wh
 # Athena remote maintenance tools
 
 ## Killall
-This command allows to kill the process "isi" or "saet" and if you can choose the methods "9" or "15"
+This command allows to kill the process "isi" or "saet" and you can choose the methods "9" or "15"
 
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
