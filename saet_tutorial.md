@@ -28,6 +28,15 @@ Tutorial for using iottly with Saet Athena boards:
   - [Bucket folders](#bucket-folders)
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
+- [Athena remote maintencance tools](#Athena-remote-maintencance-tools)
+  - [Killall](#killall)
+  - [Reboot](#reboot)
+  - [Ps](#ps)
+  - [Ifconfig](#ifconfig)
+  - [saet version](#saet-version)
+  - [GSM signal power](#gsm-signal-power)
+  - [start tcpdump](#start-tcpdump)
+  - [stop tcpdump](#stop-tcpdump)
 - [Example Code Snippets](#example-code-snippets)
   - [ps to dict](#ps-to-dict)
   - [reboot code](#reboot-code)
@@ -362,7 +371,7 @@ this command return a list of "interfaces"and "networkconf"
     }
   }
   ```
-# saet version
+# saet_version
 this command return a list of version isi and saet
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -412,7 +421,7 @@ this command return a list of version isi and saet
     }
   }
   ```
-# GSM signal power 
+# GSM_signal_power 
 this command return stauts of gsm signal
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -433,7 +442,7 @@ this command return stauts of gsm signal
     }
   }
   ```
-# start tcpdump
+# start_tcpdump
 this command allows to scan of the web interface, with determinate parameters
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
@@ -459,7 +468,7 @@ this command allows to scan of the web interface, with determinate parameters
   }
   ```
 
-# stop tcpdump
+# stop_tcpdump
 with this command you can killing the process started from start_tcpdump and you would if possible send to Amazon S3 the log_file with the result 
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
