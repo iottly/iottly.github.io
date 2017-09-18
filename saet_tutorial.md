@@ -28,7 +28,7 @@ Tutorial for using iottly with Saet Athena boards:
   - [Bucket folders](#bucket-folders)
   - [Move a file from your computer to the Athena board](#move-a-file-from-your-computer-to-the-athena-board)
   - [Move a file from the Athena board to your computer](#move-a-file-from-the-athena-board-to-your-computer)
-- [Athena remote maintencance tools](#Athena-remote-maintencance-tools)
+- [Athena remote maintenance tools](#athena-remote-maintenance-tools)
   - [Killall](#killall)
   - [Reboot](#reboot)
   - [Ps](#ps)
