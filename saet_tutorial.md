@@ -223,11 +223,257 @@ There are three folders in the bucket, corresponding to the three position in wh
 - go to your folder
 - locate and download the file you just uploaded from the board
 
+# Athena remote maintenance at tools
+
+## Killall
+This command allows to kill the process "isi" or "saet" and if you can choose the methods "9" or "15"
+
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _killall_ click _send_
+- for "processname" choose the process you would kill "isi" or "saet"
+- for "signal" choose the method ("9" for to have a killing viciuos and "15" for to have a killing clean out)
+- click send
+- message will show:
+  ```
+  {
+    "timestamp": "2017-09-18T12:12:23",
+    "devicetimestamp": "2017-09-18T12:12:23",
+    "type": "userdefined",
+    "payload": {
+      "killall": {
+        "returnstatus": "success"
+      }
+    }
+  }
+  ```
+- In case of errors, the message will show some details.
+
+# Reboot
+this command allows to reboot the device with (optional) -f
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _reboot_ click _send_
+- if you would send the reboot without -f choose in the list "force" the parameters "no" 
+- and click send
+- else you would send the message with -f chose "Yes"
+- click send
+
+# Ps 
+this command return a list of only process running on the device.
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _ps_ click _send_
+- now click again send
+- message will show: 
+  ```
+    {
+    "timestamp": "2017-09-18T12:29:03",
+    "devicetimestamp": "2017-09-18T12:29:03",
+    "type": "userdefined",
+    "payload": {
+      "processes": [
+        "PID USER       VSZ STAT COMMAND",
+        "    1 root      1900 S    init                ",
+        "    2 root         0 SW<  [kthreadd]",
+        "    3 root         0 SW<  [ksoftirqd/0]",
+        "    4 root         0 SW<  [events/0]",
+        "    5 root         0 SW<  [khelper]",
+        "    8 root         0 SW<  [async/mgr]",
+        "  116 root         0 SW<  [kblockd/0]",
+        "  123 root         0 SW<  [mxc_spi.0]",
+        "  127 root         0 SW<  [ksuspend_usbd]",
+        "  131 root         0 SW<  [khubd]",
+        "  150 root         0 SW<  [pmic_spi/0]",
+        "  230 root         0 SW   [pdflush]",
+        "  231 root         0 SW   [pdflush]",
+        "  232 root         0 SW<  [kswapd0]",
+        "  278 root         0 SW<  [aio/0]",
+        "  913 root         0 SW<  [ubi_bgt0d]",
+        "  916 root         0 SW<  [ubi_bgt1d]",
+        "  933 root         0 SW<  [kconservative/0]",
+        "  939 root         0 SW<  [hwevent]",
+        "  957 root         0 SW<  [ubifs_bgt0_0]",
+        "  967 root      1604 S <  udevd --daemon ",
+        " 1859 root         0 SW<  [ubifs_bgt1_0]",
+        " 1880 root      2076 S    /usr/sbin/dropbear ",
+        " 1884 root      1332 S    /sbin/watchdog ",
+        " 1890 root      1904 S    -/bin/sh ",
+        " 2315 root      1904 S    /bin/sh /mnt/flash/iottly/iottly-device-agent-py/iott",
+        " 2319 root     12880 S    /mnt/flash/iottly/iottly/bin/python3.6 /mnt/flash/iot",
+        " 2326 root     13584 S    /mnt/flash/iottly/iottly/bin/python3.6 /mnt/flash/iot",
+        " 2329 root     12880 S    /mnt/flash/iottly/iottly/bin/python3.6 /mnt/flash/iot",
+        " 2330 root     12984 R    /mnt/flash/iottly/iottly/bin/python3.6 /mnt/flash/iot",
+        " 2331 root     12788 S    /mnt/flash/iottly/iottly/bin/python3.6 /mnt/flash/iot",
+        " 2348 root     12432 S    /isi/isi ",
+        " 2352 root      1904 R    ps"
+      ]
+    }
+  }
+  ```
+
+# Ifconfig
+this command return a list of "interfaces"and "networkconf"
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _ifconfig_ click _send_
+- now click again send
+- message will show: 
+  ```
+    {
+    "timestamp": "2017-09-18T12:37:51",
+    "devicetimestamp": "2017-09-18T12:37:51",
+    "type": "userdefined",
+    "payload": {
+      "ifconfig": {
+        "interfaces": [
+          "eth0      Link encap:Ethernet  HWaddr 24:EB:65:00:10:E1  ",
+          "          inet addr:192.168.72.161  Bcast:192.168.72.255  Mask:255.255.255.0",
+          "          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1",
+          "          RX packets:134228 errors:0 dropped:0 overruns:0 frame:0",
+          "          TX packets:33064 errors:0 dropped:0 overruns:0 carrier:0",
+          "          collisions:0 txqueuelen:1000 ",
+          "          RX bytes:26453937 (25.2 MiB)  TX bytes:2848864 (2.7 MiB)",
+          "          Base address:0x2000 ",
+          "lo        Link encap:Local Loopback  ",
+          "          inet addr:127.0.0.1  Mask:255.0.0.0",
+          "          UP LOOPBACK RUNNING  MTU:16436  Metric:1",
+          "          RX packets:341864 errors:0 dropped:0 overruns:0 frame:0",
+          "          TX packets:341864 errors:0 dropped:0 overruns:0 carrier:0",
+          "          collisions:0 txqueuelen:0 ",
+          "          RX bytes:17122996 (16.3 MiB)  TX bytes:17122996 (16.3 MiB)"
+        ],
+        "networkconf": {
+          "NETWORK": "192.168.72.0",
+          "IP": "192.168.72.161",
+          "HOSTNAME": "Athena",
+          "# Configurazione DelphiTool ": " Tue Mar 15 13:59:41 2016",
+          "BROADCAST": "192.168.72.255",
+          "NETMASK": "255.255.255.0",
+          "BOOTPROTO": "none",
+          "NAMESERVER": "8.8.8.8",
+          "GATEWAY": "192.168.72.1"
+        }
+      }
+    }
+  }
+  ```
+# saet_version
+this command return a list of version isi and saet
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _saet_version_ click _send_
+- now click again send:
+  ```
+      {
+    "timestamp": "2017-09-18T12:53:36",
+    "devicetimestamp": "2017-09-18T12:53:36",
+    "type": "userdefined",
+    "payload": {
+      "version": {
+        "isi": [
+          "Centrale ISI v.0603171740",
+          "Plugin GSM SMS: Oct 22 2014 19:29:54",
+          "Plugin Backup: Oct 22 2014 11:04:48",
+          "Plugin BACnet: Mar 11 2016 10:53:22",
+          "Plugin Hydra: Sep 15 2015 17:54:36",
+          "Plugin MMASTER: Sep 14 2016 12:33:13",
+          "Plugin MAYER: Apr 24 2015 17:47:32",
+          "Plugin Modem (Gprs): Dec 10 2015 11:31:29",
+          "Plugin IEC1107: Mar 11 2016 10:53:19",
+          "Plugin TecnoAlarm: Dec 18 2015 11:50:53",
+          "Plugin NOTIFIER: Mar  5 2015 14:35:57",
+          "Plugin MODBUS: Feb 17 2017 18:55:27",
+          "Plugin LARA: Oct 22 2014 11:04:49",
+          "Plugin SYS: Nov 12 2015 09:54:51",
+          "Plugin UDP: Mar 28 2017 15:21:59 (v2.1)",
+          "Plugin CPU: Mar 28 2017 15:21:59",
+          "Plugin KAITHRON: Oct 22 2014 11:04:48",
+          "Plugin CEI(IMQ v1.3): Mar 11 2016 10:53:19",
+          "Plugin SCAME: Oct 22 2014 11:04:51",
+          "Plugin EiB: Oct 22 2014 11:04:49",
+          "Plugin Debug: Oct 22 2014 11:04:48"
+        ],
+        "saet": [
+          "Centrale SAET Delphi v.1102161130",
+          "Printer plugin: Oct 27 2015 13:12:51",
+          "ToolWeb plugin: Oct 26 2015 18:12:30",
+          "UDP plugin: Oct 26 2015 18:01:33 (v2.0.5)",
+          "DelphiTipo (plugin): Oct 27 2015 13:12:51",
+          "ContactID (plugin): Oct 26 2015 18:01:34",
+          "/saet/libuser.so: cannot open shared object file: No such file or directory"
+        ]
+      }
+    }
+  }
+  ```
+# GSM_signal_power 
+this command return stauts of gsm signal
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _GSM_signal_power_ click _send_
+- now click again send:
+  ```
+    {
+    "timestamp": "2017-09-18T13:01:08",
+    "devicetimestamp": "2017-09-18T13:01:08",
+    "type": "userdefined",
+    "payload": {
+      "CSQ": {
+        "bit_error_rate": 0,
+        "signal": 12
+      },
+      "last_reading": "Mon Sep 18 12:52:18 2017"
+    }
+  }
+  ```
+# start_tcpdump
+this command allows to scan of the web interface, with determinate parameters
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _start_tcpdump_ click _send_
+- for "extra_options" you can choose the options (example "-v") to add to command (THIS COMMAND ISN'T OBBLIGATORY )
+- for "interface" you can choose from "eth0" or "ppp0"
+- for "hex" if you choose "yes" the command add to string "-x" instead you choose "No" or don't choose anything nothing happens
+- for "Port" you need insert value of the port, the inserted port will be the one on which the scan will be made
+- for "protocol" you can choose from "tcp" or "udp"
+- the message returned the pid and the path when the file is saved 
+  ```
+    {
+    "timestamp": "2017-09-18T15:50:18",
+    "devicetimestamp": "2017-09-18T15:50:18",
+    "type": "userdefined",
+    "payload": {
+      "PID": {
+        "log_file": "/tmp/tcpdump_2017-09-18-15-50-18.log",
+        "pid": 2357
+      }
+    }
+  }
+  ```
+
+# stop_tcpdump
+with this command you can killing the process started from start_tcpdump and you would if possible send to Amazon S3 the log_file with the result 
+- go to iottly, in the project where the board is connected
+- navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
+- choose your board (from the list on top of the panel)
+- on _stop_tcpdump_ click _send_
+- if you would send the log_file to Amazon S3 click on the "dest_folder" and choose the destination folder
+
+
 # Example Code Snippets
 
 ## ps to dict
 
-```py
+```
+py
 from subprocess import check_output
 
 ps_headers = {0: 'pid', 1: 'cmd', 2: 'cmdargs'}
@@ -289,7 +535,7 @@ def _killall(signal, processname):
 
 # start tcpdump
 
-this command permit to do scan of the ports, with determinate parameters,some parameters are optional and others are standard
+this command permit to do scan of the interface, with determinate parameters,some parameters are optional and others are standard
 ```
 def _start_dump(interface, protocol, port, hex_flag=None, extra_options=None):
   # formatting date, time according to ISO8601
