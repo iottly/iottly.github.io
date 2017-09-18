@@ -223,7 +223,7 @@ There are three folders in the bucket, corresponding to the three position in wh
 - go to your folder
 - locate and download the file you just uploaded from the board
 
-# Athena remote maintenance at tools
+# Athena remote maintenance tools
 
 ## Killall
 This command allows to kill the process "isi" or "saet" and if you can choose the methods "9" or "15"
@@ -466,6 +466,8 @@ with this command you can killing the process started from start_tcpdump and you
 - choose your board (from the list on top of the panel)
 - on _stop_tcpdump_ click _send_
 - if you would send the log_file to Amazon S3 click on the "dest_folder" and choose the destination folder
+- when you click send the command kill the process spawned earlier and if you choose a destination the program send the file to S3 and after delete this file, otherwise if you don't choose the destination folder the program kills only the process leaving the file in memory.
+
 
 
 # Example Code Snippets
@@ -535,7 +537,6 @@ def _killall(signal, processname):
 
 # start tcpdump
 
-this command permit to do scan of the interface, with determinate parameters,some parameters are optional and others are standard
 ```
 def _start_dump(interface, protocol, port, hex_flag=None, extra_options=None):
   # formatting date, time according to ISO8601
@@ -569,8 +570,6 @@ def _start_dump(interface, protocol, port, hex_flag=None, extra_options=None):
 ```
 
 # stop tcpdump
-
-with this command you can decide if kill the process  and send the log to the s3 folder or kill only the process and leave the log file in the athena folder 
 
 ```
 def stop_tcpdump(command):
@@ -607,7 +606,7 @@ def stop_tcpdump(command):
 
 # gsm signal power
 
-get the bit error rate and the signal GSM, the log are taken with isi.log file
+
 ```
 def find_last_CSQ_log():
     """
