@@ -242,7 +242,7 @@ This command allows to kill the process "isi" or "saet" and you can choose the m
 - choose your board (from the list on top of the panel)
 - on _killall_ click _send_
 - for "processname" choose the process you would kill "isi" or "saet"
-- for "signal" choose the method ("9" for to have a killing viciuos and "15" for to have a killing clean out)
+- for "signal" choose the method ("9" to have a killing force and "15" to have a killing clean out)
 - click send
 - message will show:
   ```
@@ -260,23 +260,23 @@ This command allows to kill the process "isi" or "saet" and you can choose the m
 - In case of errors, the message will show some details.
 
 # Reboot
-this command allows to reboot the device with (optional) -f
+This command allows to reboot the device with (optional) -f
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _reboot_ click _send_
-- if you would send the reboot without -f choose in the list "force" the parameters "no" 
+- if you would send the reboot without -f choose in the list "force" the parameter "no" 
 - and click send
-- else you would send the message with -f chose "Yes"
+- else you would send the message with -f choose "Yes"
 - click send
 
 # Ps 
-this command return a list of only process running on the device.
+This command return a list of process running only on the device.
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _ps_ click _send_
-- now click again send
+- now click send again
 - message will show: 
   ```
     {
@@ -325,12 +325,12 @@ this command return a list of only process running on the device.
   ```
 
 # Ifconfig
-this command return a list of "interfaces"and "networkconf"
+This command return a list of "interfaces"and "networkconf"
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _ifconfig_ click _send_
-- now click again send
+- now click send again
 - message will show: 
   ```
     {
@@ -372,12 +372,12 @@ this command return a list of "interfaces"and "networkconf"
   }
   ```
 # saet_version
-this command return a list of version isi and saet
+This command return a list of version isi and saet
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _saet_version_ click _send_
-- now click again send:
+- now click send again:
   ```
       {
     "timestamp": "2017-09-18T12:53:36",
@@ -422,13 +422,13 @@ this command return a list of version isi and saet
   }
   ```
 # GSM_signal_power 
-this command return stauts of gsm signal
+This command return stauts of gsm signal
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _GSM_signal_power_ click _send_
-- now click again send:
-  ```
+- now click send again:
+  ```
     {
     "timestamp": "2017-09-18T13:01:08",
     "devicetimestamp": "2017-09-18T13:01:08",
@@ -443,17 +443,17 @@ this command return stauts of gsm signal
   }
   ```
 # start_tcpdump
-this command allows to scan of the web interface, with determinate parameters
+This command allows to scan of the web interface, with determinate parameters
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _start_tcpdump_ click _send_
 - for "extra_options" you can choose the options (example "-v") to add to command (THIS COMMAND ISN'T OBBLIGATORY )
 - for "interface" you can choose from "eth0" or "ppp0"
-- for "hex" if you choose "yes" the command add to string "-x" instead you choose "No" or don't choose anything nothing happens
+- for "hex" if you choose "yes" the command add to string "-x" if you choose "No" or don't choose anything, nothing happens
 - for "Port" you need insert value of the port, the inserted port will be the one on which the scan will be made
 - for "protocol" you can choose from "tcp" or "udp"
-- the message returned the pid and the path when the file is saved 
+- the message returns the pid and the path when the file is saved 
   ```
     {
     "timestamp": "2017-09-18T15:50:18",
@@ -469,13 +469,13 @@ this command allows to scan of the web interface, with determinate parameters
   ```
 
 # stop_tcpdump
-with this command you can killing the process started from start_tcpdump and you would if possible send to Amazon S3 the log_file with the result 
+With this command you can kill the process started from start_tcpdump and if you want you can send to Amazon S3 the log_file with the result 
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
 - on _stop_tcpdump_ click _send_
 - if you would send the log_file to Amazon S3 click on the "dest_folder" and choose the destination folder
-- when you click send the command kill the process spawned earlier and if you choose a destination the program send the file to S3 and after delete this file, otherwise if you don't choose the destination folder the program kills only the process leaving the file in memory.
+- when you click send the command kill the process spawned earlier and if you choose a destination the program sends the file to S3 and after deletes this file, otherwise if you don't choose the destination folder the program kills only the process but leaves the file in memory.
 
 
 
