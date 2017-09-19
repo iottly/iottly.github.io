@@ -275,7 +275,7 @@ This command return a list of process running only on the device.
 - go to iottly, in the project where the board is connected
 - navigate to the _Console_ tab and expand the panel (with the double arrow on the top right corner of the panel)
 - choose your board (from the list on top of the panel)
-- on _ps_ click _send_
+- on _ps_ click _send_ 
 - now click send again
 - message will show: 
   ```
