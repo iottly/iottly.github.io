@@ -35,7 +35,7 @@ __GET__ `project/<PROJECT ID>/inspect`
   ```json
   {
     "id": "58f73b41c3cc4800078010c5",
-    "name": "My awesome project"
+    "name": "My awesome project",
     "deployment_groups": [
       {
         "status": "",
