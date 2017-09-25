@@ -47,8 +47,8 @@ To __add a new key__ simply insert a description and press the "Create new API k
 > __Note__: Giving a meaningful description to your API keys will later simplify the management and revocation of the keys.
 > 
 > So for example key names like:
->  - "Analytics", "Reporting" or "Dashboard" are good choices if the key it's going to be used by an application
->  - "John Smith", "Operator 1" or "Testing Lab" are good choice when the key it's going to be used by people 
+>  - "Analytics", "Reporting" or "Dashboard" are good choices if the key is going to be used by an application
+>  - "John Smith", "Operator 1" or "Testing Lab" are good choice when the key is going to be used by people 
 
 ## Testing the created token
 
@@ -61,7 +61,7 @@ You should receive a response like this:
 ```json
 {"status": "pong"}
 ```
-in this case communication with the iottly API is working correctly, your good to go!
+in this case the communication with the iottly API is working correctly, you're good to go!
 
 If you receive an error calling the `ping` handler try checking your network connectivity 
 (or proxy configuration if required), if the problem persist feel free to 
