@@ -73,7 +73,7 @@ __POST__ `/project/<PROJECT ID>/device/<DEVICE ID>/command`
 
 The endpoint takes a json formatted object with the keys:
 
-- **cmd_type**: the command type (one between the message type declared in the project)
+- **cmd_type**: the command type (must be a message type declared in the project)
 - **values**: an object containing the comamand options (the format is specific for each command, you can find the format for each command in the __console__ panel of the iottly web interface)
 
 > __Example request payload__
@@ -86,7 +86,7 @@ The endpoint takes a json formatted object with the keys:
 }
 ```
 >
-> __ATTENTION:__ Please note that each command option key in the values object should be prefixed by the command type.
+> __ATTENTION:__ Please note that each command option key in the values object should be prefixed by the command type followed by a dot.
 
 ### Response
 
