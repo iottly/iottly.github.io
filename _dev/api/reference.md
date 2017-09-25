@@ -169,7 +169,7 @@ The endpoint takes two optional parameters sent as query string:
     Each message has the following keys:
     - **from**: the UUID of the device that sent the message
     - **type**: possible values *iottlyagent* or *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
-    - **payload**: contains the message as produced by the device, its content depends on the message typy (_json object_)
+    - **payload**: contains the message as produced by the device, its content depends on the message type (_json object_)
     - **devicetimestamp**: the device timestamp of the message encoded as mongodb `jsonb Date type`
 
 - **400** Client submitted invalid data, see error key in the response
