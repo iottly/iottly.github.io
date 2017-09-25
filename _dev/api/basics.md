@@ -8,9 +8,9 @@ title: Iottly developer documentation - API basic concepts
 
 APIs are authenticated using a secret token in the header of HTTP requests.
 
-Authentication to the API is performed via HTTP Basic Authentication.
+Authentication to the APIs is performed via HTTP Basic Authentication.
 
-A request to the API should have an `Authentication: bearer <YOUR API KEY>` header like the example below (using curl):
+A request to an API should have an `Authentication: bearer <YOUR API KEY>` header like the example below (using curl):
 
 ```bash
 $ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://iottly.com/v1.0/<api_specific_handler>
@@ -19,10 +19,10 @@ $ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://iottly.com/v1
 
 All the APIs are authenticated. Unauthenticated calls will return a `401` HTTP status code.
 
- > __IMPORTANT__: API tokens permits access to your data, DO NOT share them.
+ > __IMPORTANT__: API tokens permit access to your data, DO NOT share them.
 
 ## API errors
-In case of an error, calls to the iottly API may fail. In this case a relevant
+Calls to the iottly API may fail in case of an error. In this case a relevant
 __HTTP__ status code is returned.
 A more human-friendly description of the error is available in the `error` field
 of the returned json.
