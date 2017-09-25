@@ -43,8 +43,8 @@ Tutorial for using iottly with Saet Athena boards:
   - [get saet version](#get-saet-version)
   - [ifconfig](#ifconfig)
   - [killall](#killall)
-  - [start tcp dump](#start-tcp-dump)
-  - [stop tcp dump](#stop-tcp-dump)
+  - [start tcp dump](#start-tcpdump)
+  - [stop tcp dump](#stop-tcpdump)
   - [gsm signal power](#gsm-signal-power)
 
 
