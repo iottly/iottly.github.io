@@ -18,6 +18,7 @@ the caller should provide a `Content-Type: application/json` header.
 
 __Table of content__
 >- **[Project inspection API](#project-inspection-api)**
+>- **[License inspection API](#license-inspection-api)**
 >- **[Command API](#command-api)**
 >- **[Message history API](#message-history-api)**
 
@@ -55,7 +56,7 @@ __GET__ `project/<PROJECT ID>/inspect`
   }
   ```
 - **401** Unauthorized - Client is not authenticated
-- **403** Forbidden - Client does not have permission for the specified project or device
+- **403** Forbidden - Client does not have permission for the specified project
 - **500** Server Error
 
 ### Example request
@@ -63,6 +64,55 @@ __GET__ `project/<PROJECT ID>/inspect`
 curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/inspect
 ```
 
+
+## License inspection API
+
+Get summary information about the __license tokens__ available in your __iottly project__
+
+__GET__ `project/<PROJECT ID>/license/[<LICENSE_ID>]`
+
+### Response
+
+
+- **200** OK
+  - the response body will contain information on the specific license or on all the licenses available
+  ```json
+  {
+    "599f8661ae4efc9ab47ebfe76013bbae": {
+      "status": "paired",
+      "board": {
+        "macaddress": "02:43:3d:0a:07:1f",
+        "operatingstatus": "connected",
+        "id": "9af78306-384e-4dbc-9d63-af21cc5496a8",
+        "name": "board 1"
+      }
+    },
+    "c11b659250ccf128e0bfee34f1b1ef64": {
+      "status": "available",
+      "board": {}
+    },
+    "1e01b0ae1820d23ec3bc246fda3f3a90": {
+      "status": "available",
+      "board": {}
+    },
+    "87adcfb4d719a0d1c86fdd1de07fed95": {
+      "status": "available",
+      "board": {}
+    },
+    "5f3b2ec15843943e873c0df2e919f7d9": {
+      "status": "available",
+      "board": {}
+    }
+  }
+  ```
+  - **401** Unauthorized - Client is not authenticated
+  - **403** Forbidden - Client does not have permission for the specified project
+  - **500** Server Error
+
+### Example request
+```shell
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/license
+```
 
 ## Command API
 Send a command to a device
