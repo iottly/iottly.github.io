@@ -1,6 +1,6 @@
 ---
 title: Iottly tutorials
-published: false
+published: true
 ---
 
 # IoT Sensor Hello World
