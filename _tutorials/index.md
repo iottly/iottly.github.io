@@ -12,4 +12,5 @@ A curated list of tutorials to get up and running with __Iottly__.
 - Work with the THINGS
   - [Warm up exercise without IoT!]({{'tutorials/warm_up_exercise_without_iot' | relative_url}})
   - [IoT Actuator Hello World]({{'tutorials/iot_actuator_hello_world' | relative_url}})
- 
+  - [IoT Sensor Hello World]({{'tutorials/iot_sensor_hello_world' | relative_url}})
+  - [IoT Sensor Hello World]({{'tutorials/iot_setpoints_hello_world' | relative_url}})
