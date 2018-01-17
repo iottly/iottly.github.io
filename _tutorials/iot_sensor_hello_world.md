@@ -62,11 +62,13 @@ def init():
 
   #-------------------------------
   # here your code!!
+
   pin = "7"
-  GPIO.setup(int(pin), GPIO.OUT)
+  GPIO.setup(int(pin), GPIO.OUT)  
   pin = "12"
   GPIO.setup(int(pin), GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-  GPIO.add_event_detect(int(pin), GPIO.BOTH, callback=button_pressed, bouncetime=200)
+  GPIO.add_event_detect(int(pin), GPIO.RISING, callback=button_pressed, bouncetime=200)
+  
   #---------------------------------
 ``` 
    
@@ -76,7 +78,7 @@ def init():
 ```python
 # ...
 def button_pressed(channel):
-  status = GPIO.input(channel)
+  status = GPIO.input(7)
   send_msg({"button_pressed": {"GPIO": channel, "state": status}})
 ```
 
@@ -99,9 +101,10 @@ Let's add an edge feedback so that when the button is pressed, the green LED is 
 ```python
 # ...
 def button_pressed(channel):
-  status = GPIO.input(channel)
+  status = GPIO.input(7)
   
   # -------- edge feedback -------------
+  status = not status
   GPIO.output(7,status)
   # -------- edge feedback -------------
   
