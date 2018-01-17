@@ -44,7 +44,7 @@ Create the following message:
 - Description: 
   - IoT Actuator Hello World
 - Keywords:
-  - kay: “state”
+  - key: “state”
     - Type: Multiple Value
   - Values:
     - on
