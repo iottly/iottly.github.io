@@ -35,24 +35,12 @@ __GET__ `project/<PROJECT ID>/inspect`
   - the response body will contain information on the specific project
   ```json
   {
-    "id": "58f73b41c3cc4800078010c5",
-    "name": "My awesome project",
-    "deployment_groups": [
-      {
-        "status": "",
-        "boards": [
-            "a2792ce8-216f-477c-a5cc-4f7e9f407e29"
-        ],
-        "branch": "",
-        "name": "_orphaned",
-        "fwcode": {
-            "codesections": [],
-            "snippets": []
-        },
-        "current_revision": "",
-        "id": "1fef341c-2b1d-42d3-ac9a-2da8d4ec4756"
-      }
-    ]
+    "id": <the unique id of the project>,
+    "name": <the name of the project>,
+    "projectgetagenturl": <the download url of the agent specific to the project>,
+    "agentfile": <the agent installer filename>,
+    "agentapihost": <the project api hostname>,
+    "board": <the device type like Linux ARMv5> 
   }
   ```
 - **401** Unauthorized - Client is not authenticated
