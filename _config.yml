@@ -10,6 +10,9 @@ collections:
     dev:
         output: true
 
+    support:
+        output: true
+
 
 defaults:
     - scope:
@@ -20,6 +23,11 @@ defaults:
     - scope:
         path: ""
         type: dev
+      values:
+        layout: default
+    - scope:
+        path: ""
+        type: support
       values:
         layout: default
 
