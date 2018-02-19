@@ -1,5 +1,5 @@
 ---
-title: Iottly suppork KB
+title: Iottly support KB
 ---
 
 # Upgrade agent from versions 1.5.x
