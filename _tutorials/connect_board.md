@@ -44,3 +44,9 @@ To uninstall the agent just remove the dir `iottly.com-agent` that has been crea
 The following diagram shows how the paring process works.
 Everything is managed by each of the three above procedures, this picture has the solely purpose of letting you know what is happening under the hood.
 ![iottly pairing](/images/iottly-pairing.png)
+
+## MQTT credentials
+
+iottlyAgent and iottlyCloud authenticate each other by means of X.509 mutual authentication (or client certificate).
+Here is how we use an iternal CA to sign both the device Unique ID and the borker username so that each of the two can verify the autenticity of the other:
+![security MQTT X509](/images/security-MQTT-X509.png)
