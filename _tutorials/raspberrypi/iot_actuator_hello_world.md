@@ -2,7 +2,7 @@
 title: Iottly tutorials
 ---
 
-# IoT Actuator Hello World 
+# IoT Actuator Hello World
 
 #### What you will learn in this tutorial:
 - [Hardware setup](#hardware-setup) to remotely control the LED
@@ -12,7 +12,7 @@ title: Iottly tutorials
 ## Preconditions
 
 After connecting your Raspberry Pi:
-- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}}){:target="_blank"}
+- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_board' | relative_url}}){:target="_blank"}
 
 you can follow this tutorial.
 
@@ -25,23 +25,23 @@ In this exercise we are going to use pin *#7* as an **output** (actuator) to con
 ![Alt text](/images/hardware_set_up1.png)
 
 
-[Raspberry Pi 1 Rev 1 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout.jpg){:target="_blank"} 
+[Raspberry Pi 1 Rev 1 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout.jpg){:target="_blank"}
 
-[Raspberry Pi 1 Rev 2 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout-rev2.jpg){:target="_blank"} 
+[Raspberry Pi 1 Rev 2 Pinout reference here](http://www.hobbytronics.co.uk/image/data/tutorial/raspberry-pi/gpio-pinout-rev2.jpg){:target="_blank"}
 
-[Raspberry Pi 2/3 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"} 
+[Raspberry Pi 2/3 Pinout reference here](http://www.jameco.com/Jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2a.jpg){:target="_blank"}
 
 [Raspberry Pi zero w Pinout reference here](http://othermod.com/wp-content/uploads/Raspberry-Pi-Model-Zero-Mini-PC.jpg){:target="_blank"}   
 
 Let’s use Iottly to configure  a command to remotely control the LED
 
 
-## Message Setup 
+## Message Setup
 
 Create the following message:
-- Name: 
+- Name:
   - LED_control
-- Description: 
+- Description:
   - IoT Actuator Hello World
 - Keywords:
   - key: “state”
@@ -49,7 +49,7 @@ Create the following message:
   - Values:
     - on
     - off
-    
+
 ![Alt text](/images/iottly_message_setup.png)
 
 
@@ -57,7 +57,7 @@ Create the following message:
 Edit the following snippets in CODING-FIRMWARE panel:
 - ```init```:
   - Initialize Pin *#7* to be managed as **output**
-  
+
 
 ```python
 def init():
@@ -66,15 +66,15 @@ def init():
   #-----------------------------------------------------------------------------#
 
   # here your code!!
-  
+
   pin = "7"
   GPIO.setup(int(pin), GPIO.OUT)
-  
+
   #-----------------------------------------------------------------------------#
 
   ```
-  
-  
+
+
 - ```LED_control``` :
   - Keep in mind the format of the incoming message:
       ```{"LED_control":{"state":"<on|off>"}}```
@@ -95,12 +95,9 @@ def LED_control(command):
   GPIO.output(7,state)
   #-----------------------------------------------------------------------------#
   ```
-  
-  
+
+
 - ![Alt text](/images/flash_botton.png)
 
 
 - Test the “IoT Actuator Hello World” from the Console panel
-
-
-
