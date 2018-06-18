@@ -53,10 +53,10 @@ The meaning of the keys is the following:
   - optional
   - this is useful when you want to customize the device name with local parameters like the CID of the SD card.
   - if present it must contain the path to a python script like the following:
-  ```
-  def get_device_name():
-    return "example device name"
-  ```
+```
+def get_device_name():
+  return "example device name"
+```
   - when the self register procedure starts it will try to call the `get_device_name` function in the hook script to obtain the device name
     - the function must accept zero args and must return a string
   - if absent, the procedure tries to obtain the name from the following parameter
@@ -64,3 +64,17 @@ The meaning of the keys is the following:
   - optional
   - if present this will be the (fixed) name of the device
   - if absent (and also the hook is absent) the procedure will fallback to "NEW DEVICE"
+
+### 4. configure iottly to be started by the init system
+
+Configure the init system of the image to run the following command:
+`/opt/iottly.com-agent/sbin/iottly`
+
+This script handles the respawn, so that you don't need to configure the init system to respawn the agent.
+
+### 5. flash the image and turn on the device
+
+The image built in this way has no dependencies on specific device attributes, so that you can use it as a master image to be flashed in bulk on new devices.
+
+Once the device will be powered on the agent will start trying to register to iottlyCloud.
+As soon as an internet connection will be available for the device, the registration will succeed, and you'll be able to see the device registered and connected in the __DEVICE CONFIGURATION__ panel.
