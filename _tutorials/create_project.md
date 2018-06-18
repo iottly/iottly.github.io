@@ -6,7 +6,7 @@ title: Iottly tutorials
 
 A project in __Iottly__ is a set of devices with the same hardware architecture and the same python scripts running on them.
 
-![Alt text](/images/create_project.png)
+![Create Project](/images/create_project.png)
 
 ## Choose the DEVICE TYPE
 

@@ -2,99 +2,45 @@
 title: Iottly tutorials
 ---
 
-# Connect the Raspberry Pi to Iottly
+# Connect a device to Iottly
 
+## Preconditions
 
-What you **will learn** in this tutorial:
+You need to [create a new project]({{'tutorials/create_project' | relative_url}}), prior to connecting devices to it.
 
+## Details of connecting a device to Iottly
 
-- How to [Register the Raspberry Pi with Iottly](#register-the-raspberry-pi-with-iottly) for Windows or Linux
-- how to [Remote programming with Iottly](#remote-programming-with-iottly)
-- [Board Attributes](#board-attributes)
-- [Deployment group](#deployment-groups)
-- How to [Uninstall the agent](#uninstall-agent)
+There are three alternative ways of connecting a device to iottly
 
-
-## Register the Raspberry Pi with Iottly
-
-iottly works with Raspbian Lite. [CLICK HERE]({{'tutorials/flash_and_ssh_pi' | relative_url}}) for instructions on how to flash the image and ssh to the RPi.
-
-Connect to the board via ssh:
-- User: pi
-- Password: raspberry
-   - From **Linux**: `ssh pi@[detected IP]`
-   - From **Windows**: [run putty.exe](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}
-
->**- This is the first and only time you need to connect via ssh on the board**
-
-
-From the Iottly project/ DEVICE-CONFIGURATION/ Add device/ Connect your RaspberryPi:
-- Copy the registration command
-
-
-![Alt text](/images/registration_command.png)
-
-
-- Paste it into ssh or putty
-   - in putty right-click to paste
-- Execute the command which will **automatically** take care of:
-   - downloading the agent installer customized from your IoT project
-   - checking and install newly available firmware in /var/iottly-agent/userpackageuploads
-   - registering the device
-   - connecting the device to Iottly
-
-**Pair the board** while installation is in progress.
-
-
-Communication with the board is encrypted and authenticated. The **Iottly pairing procedure** guarantees the physical identification of the device.
-
-- copy the token from the ssh console
-
-![get token from ssh console](/images/ssh_pairing.png)
-
-
-- and paste the token here
- 
- 
-![Alt text](/images/pairing.png)
-
-
-## Remote programming with Iottly
-
-
-From now you can program and manage the board entirely **from the Internet (Over-the-Air)**.
-Your computer doesn't need to be connected to the same network as the board anymore.
-
-![Alt text](/images/slide12.png)
-
-
+1. by hand, following the steps presented in the __DEVICE CONFIGURATION__ panel, once you click on __ADD DEVICE__
+  - suitable when you want to connect a single device which is already deployed on the field (or to connect a small set of devices, for dev/test purposes)
+  - this procedure is straightforward, just follow the instructions on the panel and you'll be done in less than a minute
+2. by hand, with the help of a script to automate every step
+  - suitable when you want to repeatedly connect multiple devices already deployed on the field
+  - place [this script]('/scripts/iottly-install-agent.sh'){:target="_blank"} on the device
+  - and follow the usage help of the script on how to use it and how to configure your project
+3. by pre-installing the iottlyAgent on the image of the device
+  - suitable for bulk installations in production
+  - follow this tutorial for the details: [pre-install on the device image]({{'tutorials/pre_install_agent' | relative_url}})
 
 ##  Board Attributes
 
-- **Unique ID**: 
+Once the device is installed, the following attributes will be available on the __DEVICE CONFIGURATION__ panel:
+
+- **Unique ID**:
    - this is the unique identifier of the board within Iottly
    - it is the username for MQTT authentication
-- **Board MAC address**: 
+- **Board MAC address**:
    - if the board is reset to factory after having been registered, Iottly will assign the same Unique ID it generated during the first registration, based on the MAC address.
-- **click** on the board to edit the description (or remove)
-   
 
-## Deployment groups
+**Click** on the device to edit the description, or remove it.
 
+## Uninstall the agent
 
-New Deployment groups
-- write Name of your group
-- insert the Board to the deployment group
-       
-       
-## Uninstall agent   
+To uninstall the agent just remove the dir `iottly.com-agent` that has been created during the installation.
 
+## Pairing process
 
- Only if you want to unistall the agent, run this command from the home in ssh or putty:
-`iottly-device-agent-py/iottly-device-agent-py/uninstall`
-
-
-## Further instructions on the following tutorial:
-- [Get started]({{'tutorials/get_started' | relative_url}})
-
-
+The following diagram shows how the paring process works.
+Everything is managed by each of the three above procedures, this picture has the solely purpose of letting you know what is happening under the hood.
+![iottly pairing](/images/iottly-pairing.png)
