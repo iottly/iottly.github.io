@@ -25,7 +25,7 @@ The code is in the `global` section:
 def read_data_from_sensor(sensortype):
   """simulates the reading of a sensor randomly generating values"""
   if sensortype == "temperature":
-    # randomly generate temperature value 
+    # randomly generate temperature value
     return round_reading(random.uniform(30,50))   
   elif sensortype == "humidity":
     # randomly generate humidity value
@@ -39,12 +39,12 @@ The main code in the `loop` section, simply polls sensors' data value every 5 se
 def loop():
   """the main loop of your device, running on a dedicated process"""
 
-  # this example simply "polls" the temperature value every 5 sec, 
+  # this example simply "polls" the temperature value every 5 sec,
   # storing them in global variables (defined in the global section)
 
   temp_value.value = read_data_from_sensor("temperature")
   hum_value.value = read_data_from_sensor("humidity")
-  
+
   time.sleep(5)
 ```
 
@@ -56,7 +56,7 @@ Move to the `Messages` panel:
 
 ### Interactively ask the Pi for sensor readings
 
-Let's say we want to remotely ask the Pi for the temperature and/or humidity value. 
+Let's say we want to remotely ask the Pi for the temperature and/or humidity value.
 What we need is a command and the code to handle it.
 
 The command has been defined with the following structure:
@@ -75,18 +75,18 @@ def read_sensor_data(command):
   command description: Make a sensor data reading
   format of command dict:
   {"read_sensor_data":{"sensortype":"<temperature|humidity|both>"}}
-  
+
   Command handlers run in a dedicated process (one for all)  
   """
 
   # cmdpars stores the command parameters
   cmdpars = command["read_sensor_data"]
-  
+
   # based on the value of sensortype get the data :
-  #   - from temp_value.value, 
+  #   - from temp_value.value,
   #   - or from hum_value.value
   #   - or from both of them
- 
+
   if (cmdpars["sensortype"] == "temperature"):  
     sensor_data_reading = {"temperaure":temp_value.value}
 
@@ -105,7 +105,7 @@ def read_sensor_data(command):
   #    "humidity": <hum value from hum_value.value>,
   #  }}      
   message = {"sensor_data_reading": sensor_data_reading}
-  
+
   # finally send the message over MQTT with the built in iottly function    
   send_msg(message)
 ```
@@ -128,11 +128,11 @@ Copy this code and paste it in the `loop` function, jsut before the `time.sleep`
 
 ```py
   if temp_value.value > 48:
-    alarm = {"description":"temperature too high", 
+    alarm = {"description":"temperature too high",
                  "temp_value":temp_value.value}
-    
+
     message = {"ALARM": alarm}
-  
+
     send_msg(message)    
 ```
 
@@ -195,7 +195,6 @@ In the *Coding Firmware* panel, go to the `loop` function and change the alarm c
 
 ## Next steps
 
-Goon, create a new project and connect your physical Raspberry Pi to it!!!
+Goon, create a new project and connect your physical board to it!!!
 
 The full tutorial to work with physical Pis is here: [https://iottly.github.io/](https://iottly.github.io/)
-

@@ -2,15 +2,14 @@
 title: Iottly docs
 ---
 
-# Tutorials 
+# Tutorials
 
-A curated list of tutorials to get up and running with __iottly__.
+A curated list of tutorials to get up and running with __Iottly__.
 
+- [Play around with the Getting Started project]({{'getting_started' | relative_url}})
+- [Create New Project]({{'tutorials/create_project' | relative_url}})
+- [Connect Devices to iottly]({{'tutorials/connect_board' | relative_url}})
 
-- [Create New Project]({{'tutorials/create_project' | relative_url}}){:target="_blank"}
-- [Connect Raspberry Pi to Iottly]({{'tutorials/connect_raspberrypi' | relative_url}}){:target="_blank"}
-- [Get Started]({{'tutorials/get_started' | relative_url}}){:target="_blank"}
-- Work with the THINGS
-  - [Warm up exercise without IoT!]({{'tutorials/warm_up_exercise_without_iot' | relative_url}}){:target="_blank"}
-  - [IoT Actuator Hello World]({{'tutorials/iot_actuator_hello_world' | relative_url}}){:target="_blank"}
- 
+# Examples with Raspberry Pi
+
+Here you can find examples [on what you can do with __Iottly__ on your RaspberryPi]({{'tutorials/raspberrypi' | relative_url}})
