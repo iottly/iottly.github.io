@@ -17,7 +17,7 @@ There are three alternative ways of connecting a device to iottly
   - this procedure is straightforward, just follow the instructions on the panel and you'll be done in less than a minute
 2. by hand, with the help of a script to automate every step
   - suitable when you want to repeatedly connect multiple devices already deployed on the field
-  - place [this script]('/scripts/iottly-install-agent.sh'){:target="_blank"} on the device
+  - place [this script](../scripts/iottly-install-agent.sh){:target="_blank"} on the device
   - and follow the usage help of the script on how to use it and how to configure your project
 3. by pre-installing the iottlyAgent on the image of the device
   - suitable for bulk installations in production
