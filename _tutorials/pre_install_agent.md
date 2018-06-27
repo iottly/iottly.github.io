@@ -30,7 +30,7 @@ Create the file `/opt/iottly.com-agent/etc/iottly/registersettings.json` with th
 
 ```
 {
-    "REGISTRATION_HOST": "cloud.iottly.com",
+    "REGISTRATION_HOST": "api.cloud.iottly.com",
     "PROJECT_ID": "<project id>",
     "API_KEY": "<api key>",
     "DEVICE_NAME_HOOK":"<dynamic device name hook>",
@@ -55,7 +55,7 @@ The meaning of the keys is the following:
   - if present it must contain the path to a python script like the following:
 ```
 def get_device_name():
-  return "example device name"
+    return "example device name"
 ```
   - when the self register procedure starts it will try to call the `get_device_name` function in the hook script to obtain the device name
     - the function must accept zero args and must return a string
