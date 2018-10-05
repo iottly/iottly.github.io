@@ -15,7 +15,7 @@ The procedure consists of two main steps:
 Follow these steps:
 ### 1. download the agent tarball
 
-- from `https://cloud.alpha.iottly.com/getagent/iottlyagent_[version]_linux_[DEVICE TYPE].tar.gz`
+- from `https://cloud.iottly.com/getagent/iottlyagent_[version]_linux_[DEVICE TYPE].tar.gz`
 - `version` is latest available version of the agent, for example 1.7.1
 - `DEVICE TYPE` is the __DEVICE TYPE__ that you have choosen while [creating the project]({{'tutorials/create_project' | relative_url}})
 
