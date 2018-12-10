@@ -70,7 +70,7 @@ Create the following message:
 ## Iottly Code
 
 
-In CODING-FIRMWARE panel edit the following snippets:
+In the _"Management Scripts"_ panel edit the following snippets:
 - ```globals```:
   - Add a global dictionary to map colors to PWM objects
     - The ```COLOR_TO_PWM_MAP``` dictionary needs to be global since it will be accessed by both the ```init``` and the ```LED_intensity``` functions
