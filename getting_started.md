@@ -12,9 +12,9 @@ You can see your Elastic Pi from the *Device Configuration* panel, in connected 
 
 ## The code
 
-Move to the *Coding Firmware* panel:
+Move to the *Management Scripts* panel:
 
-![Coding Firmware panel](/images/elastic_pi_getting_started_code.png)
+![Management Scripts panel](/images/elastic_pi_getting_started_code.png)
 
 ### Generating sensor data readings
 
@@ -161,7 +161,7 @@ Move to the *Messages* panel and create a command like this one:
 
 #### Define a new global variable
 
-Move to the *Coding firmware* panel and add this line to the global section:
+Move to the *Management Scripts* panel and add this line to the global section:
 
 ```py
 Threshold = multiprocessing.Value('d',45.0)
@@ -169,7 +169,7 @@ Threshold = multiprocessing.Value('d',45.0)
 
 #### Fill the new command handler with the logic to store the threshold
 
-In the *Coding Firmware* panel, you will find a new command handler `set_alarm_threshold` which have been generated when you created the new command.
+In the *Management Scripts* panel, you will find a new command handler `set_alarm_threshold` which have been generated when you created the new command.
 
 Simply add this code at the end of the handler:
 
@@ -185,7 +185,7 @@ Simply add this code at the end of the handler:
 
 #### Change the loop function
 
-In the *Coding Firmware* panel, go to the `loop` function and change the alarm condition, like this:
+In the *Management Scripts* panel, go to the `loop` function and change the alarm condition, like this:
 
 ```py
   if temp_value.value > Threshold.value:
