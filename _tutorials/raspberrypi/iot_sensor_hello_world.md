@@ -48,7 +48,7 @@ Let’s use Iottly to configure an event to be triggered when the button is pres
 ## Setup button callback in Iottly
 
 
-In CODING-FIRMWARE panel edit the following snippets:
+In the _"Management Scripts"_ panel edit the following snippets:
 - ```init``` :
   - Initialize Pin *#12* to be managed as **input**
     - The ```GPIO.PUD_DOWN``` flag allows to set a software version of a pull down resistor
