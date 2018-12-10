@@ -7,8 +7,8 @@ title: Iottly tutorials
 
 #### What you will see in this tutorial:
 - Working with the [Console](#console)
-- [Coding Firmware](#coding-firmware)
-- [Pre built examples](#pre-built-examples) of coding firmware
+- [Management Scripts](#management-scripts)
+- [Pre built examples](#pre-built-examples) of Management Scripts
   - How to [Flash the pre built examples](#flash-the-pre-built-examples)
   - How to [Test the pre built examples](#test-the-pre-built-examples)
 - Creating [Messages](#messages-panel)
@@ -37,9 +37,9 @@ title: Iottly tutorials
 
 
 
-## Coding Firmware
+## Management Scripts
 
-The Coding Firmware is divided into sections:
+The _"Management Scripts"_ panel is divided into sections:
 - Sections contain auto generated code snippets
 - Snippets can be edited and they are stored individually within the project
 
