@@ -54,7 +54,7 @@ Create the following message:
 
 
 ## Iottly Code
-Edit the following snippets in CODING-FIRMWARE panel:
+Edit the following snippets in the _"Management Scripts"_ panel:
 - ```init```:
   - Initialize Pin *#7* to be managed as **output**
 
