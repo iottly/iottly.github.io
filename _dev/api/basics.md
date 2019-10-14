@@ -13,7 +13,7 @@ Authentication to the APIs is performed via HTTP Basic Authentication.
 A request to an API should have an `Authentication: bearer <YOUR API KEY>` header like the example below (using curl):
 
 ```bash
-$ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://iottly.com/v1.0/<api_specific_handler>
+$ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://api.cloud.iottly.com/v1.0/<api_specific_handler>
 {<api response>}
 ```
 
@@ -55,7 +55,7 @@ To __add a new key__ simply insert a description and press the "Create new API k
 If you want to test the API communication you can use the `ping` handler.
 
 ```shell
-$ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://iottly.com/v1.0/ping
+$ curl -H "Authentication: bearer <PUT HERE YOUR API KEY>" https://api.cloud.iottly.com/v1.0/project/ping
 ```
 You should receive a response like this:
 ```json
