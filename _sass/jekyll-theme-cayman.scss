@@ -35,10 +35,10 @@ body {
 
 a {
   color: $body-link-color;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
