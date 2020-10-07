@@ -268,7 +268,7 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
     ```  
     Each message has the following keys:
     - **from**: the UUID of the device that sent the message
-    - **to**:  the UUID of the device that receive the message
+    - **to**:  the ID of the project where the device is registered
     - **devicetimestamp**: the device timestamp of the message encoded as MongoDB `jsonb Date type`
     - **type**: one of *iottlyagent* | *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
     - **payload**: contains the message as produced by the device (_its content depends on the message type and is a json object)_
