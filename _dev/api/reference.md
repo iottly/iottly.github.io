@@ -28,7 +28,7 @@ __Table of content__
 
 Get summary information about a __iottly project__
 
-__GET__ `project/<PROJECT ID>/inspect`
+__GET__ `project/<PROJECT_ID>/inspect`
 
 ### Response
 
@@ -50,7 +50,7 @@ __GET__ `project/<PROJECT ID>/inspect`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/inspect
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/inspect
 ```
 
 
@@ -58,7 +58,7 @@ curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/pro
 
 Get summary information about the __license tokens__ available in your __iottly project__
 
-__GET__ `project/<PROJECT ID>/license/[<LICENSE_ID>]`
+__GET__ `project/<PROJECT_ID>/license/[<LICENSE_ID>]`
 
 ### Response
 
@@ -100,13 +100,13 @@ __GET__ `project/<PROJECT ID>/license/[<LICENSE_ID>]`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/license
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
 ```
 
 ## Command API
 Send a command to a device
 
-__POST__ `/project/<PROJECT ID>/device/<DEVICE ID>/command`
+__POST__ `/project/<PROJECT_ID>/device/<DEVICE_ID>/command`
 
 ### Request body
 
@@ -139,14 +139,14 @@ The endpoint takes a json formatted object with the keys:
 ### Example request
 
 ```shell
-curl -H 'Authentication: bearer <API KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/device/<DEVICE ID>/command
+curl -H 'Authentication: bearer <API KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/command
 ```
 
 ## Message history API
 
 Get the messages sent by a device _(from the newest to the oldest)_
 
-__GET__ `project/<PROJECT ID>/messages/<DEVICE ID>`
+__GET__ `project/<PROJECT_ID>/messages/<DEVICE_ID>`
 
 ### Request parameters
 The endpoint takes two optional parameters sent as query string:
@@ -218,23 +218,23 @@ The endpoint takes two optional parameters sent as query string:
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/messages/<device id>
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/messages/<DEVICE_ID>
 ```
 
 
 ## Paginated messages API
 Get a specific number of messages sent by a device (_page by page and with the possibility of filtering them_)
 
-__GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
+__GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated`
 
 ### Request parameters
 
-- **p**: Page number to be retrieved 
-- **l**: The number of results in each page (_default 50, min 1, max 100_)
-- **type**: Filter messages by type, one of **all | userdefined | iottlyagent**
-- **from**: A timestamp represents the left limit for the desired temporal range (**left limit included**)
-- **to**: A timestamp represents the right limit for the desired temporal range (**right limit excluded**)
-- **sort**: One of **asc | desc**, sort the results in ascending/descending temporal order (_default desc_)
+- **p**: page number to be retrieved 
+- **l**: the number of results in each page (_default 50, min 1, max 100_)
+- **type**: filter messages by type, one of **all  userdefined \| iottlyagent**
+- **from**: a timestamp represents the left limit for the desired temporal range (**left limit included**)
+- **to**: a timestamp represents the right limit for the desired temporal range (**right limit excluded**)
+- **sort**: one of **asc \| desc**, sort the results in ascending/descending temporal order (_default desc_)
 
 ### Response
 - **200** OK
@@ -270,7 +270,7 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
     - **from**: the UUID of the device that sent the message
     - **to**:  the ID of the project where the device is registered
     - **devicetimestamp**: the device timestamp of the message encoded as MongoDB `jsonb Date type`
-    - **type**: one of *iottlyagent* | *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
+    - **type**: one of *iottlyagent* \| *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
     - **payload**: contains the message as produced by the device (_its content depends on the message type and is a json object)_
 
 - **400** Invalid custom query 
@@ -283,5 +283,5 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/device/<device id>/messages/paginated
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated
 ```
