@@ -218,7 +218,7 @@ The endpoint takes two optional parameters sent as query string:
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/messages/<device id>
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/messages/<DEVICE ID>
 ```
 
 
@@ -229,12 +229,12 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
 
 ### Request parameters
 
-- **p**: Page number to be retrieved 
-- **l**: The number of results in each page (_default 50, min 1, max 100_)
-- **type**: Filter messages by type, one of **all | userdefined | iottlyagent**
-- **from**: A timestamp represents the left limit for the desired temporal range (**left limit included**)
-- **to**: A timestamp represents the right limit for the desired temporal range (**right limit excluded**)
-- **sort**: One of **asc | desc**, sort the results in ascending/descending temporal order (_default desc_)
+- **p**: page number to be retrieved 
+- **l**: the number of results in each page (_default 50, min 1, max 100_)
+- **type**: filter messages by type, one of **all  userdefined \| iottlyagent**
+- **from**: a timestamp represents the left limit for the desired temporal range (**left limit included**)
+- **to**: a timestamp represents the right limit for the desired temporal range (**right limit excluded**)
+- **sort**: one of **asc \| desc**, sort the results in ascending/descending temporal order (_default desc_)
 
 ### Response
 - **200** OK
@@ -270,7 +270,7 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
     - **from**: the UUID of the device that sent the message
     - **to**:  the ID of the project where the device is registered
     - **devicetimestamp**: the device timestamp of the message encoded as MongoDB `jsonb Date type`
-    - **type**: one of *iottlyagent* | *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
+    - **type**: one of *iottlyagent* \| *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
     - **payload**: contains the message as produced by the device (_its content depends on the message type and is a json object)_
 
 - **400** Invalid custom query 
@@ -283,5 +283,5 @@ __GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/device/<device id>/messages/paginated
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated
 ```
