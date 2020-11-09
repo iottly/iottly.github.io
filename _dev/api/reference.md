@@ -50,7 +50,7 @@ __GET__ `project/<PROJECT_ID>/inspect`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/inspect
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/inspect
 ```
 
 
@@ -100,7 +100,7 @@ __GET__ `project/<PROJECT_ID>/license/[<LICENSE_ID>]`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
 ```
 
 ## Command API
@@ -139,7 +139,7 @@ The endpoint takes a json formatted object with the keys:
 ### Example request
 
 ```shell
-curl -H 'Authentication: bearer <API KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/command
+curl -H 'Authentication: bearer <API_KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/command
 ```
 
 ## Message history API
@@ -218,7 +218,7 @@ The endpoint takes two optional parameters sent as query string:
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/messages/<DEVICE_ID>
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/messages/<DEVICE_ID>
 ```
 
 
@@ -283,5 +283,5 @@ __GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated
 ```
