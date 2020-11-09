@@ -46,11 +46,10 @@ __GET__ `project/<PROJECT_ID>/inspect`
   ```
 - **401** Unauthorized - Client is not authenticated
 - **403** Forbidden - Client does not have permission for the specified project
-- **500** Server Error
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/inspect
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/inspect
 ```
 
 
@@ -96,11 +95,100 @@ __GET__ `project/<PROJECT_ID>/license/[<LICENSE_ID>]`
   ```
   - **401** Unauthorized - Client is not authenticated
   - **403** Forbidden - Client does not have permission for the specified project
-  - **500** Server Error
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
+```
+
+## Device properties API
+### Device properties API - show
+
+Get detailed information for each __device__ in your __iottly project__
+
+__GET__ `project/<PROJECT_ID>/devices/props` for all devices
+
+__GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/props` for one device
+
+### Response
+
+
+- **200** OK
+  - the response body will contain information on the specific device or on all the devices in the project
+
+  For all devices:
+  ```json
+  {
+    "count": <number of devices registered on the project>,
+    "errors": null,
+    "devices": [
+      {
+        "macaddress": "<the device's MAC address>",
+        "name": "<the device's name>",
+        "operatingstatus": "<connected|disconnected>",
+        "token": "<the license token associated with the device>",
+        "agent_version": "<the version of the iottly agent currently installed on the device>",
+        "ID": "<the device's unique ID>",
+      },
+      ...
+    ]
+  }
+  ```
+
+  For one device:
+
+  ```json
+  {
+    "macaddress": "<the device's MAC address>",
+    "name": "<the device's name>",
+    "operatingstatus": "<connected|disconnected>",
+    "token": "<the license token associated with the device>",
+    "agent_version": "<the version of the iottly agent currently installed on the device>",
+    "ID": "<the device's unique ID>",
+  }
+  ```
+  - **401** Unauthorized - Client is not authenticated
+  - **403** Forbidden - Client does not have permission for the specified project
+
+### Example request
+
+All devices
+```shell
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/devices/props
+```
+Single device
+```shell
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/props
+```
+
+### Device properties API - edit
+
+Edit properties of one __device__ in your __iottly project__
+
+__PUT__ `project/<PROJECT_ID>/device/<DEVICE_ID>/props`
+
+### Response
+
+
+- **200** OK
+  - the response body will contain updated information on the specific device
+  ```json
+  {
+    "macaddress": "<the device's MAC address>",
+    "name": "<the device's name>",
+    "operatingstatus": "<connected|disconnected>",
+    "token": "<the license token associated with the device>",
+    "agent_version": "<the version of the iottly agent currently installed on the device>",
+    "ID": "<the device's unique ID>",
+  }
+  ```
+  - **400** Bad request - The request is malformed
+  - **401** Unauthorized - Client is not authenticated
+  - **403** Forbidden - Client does not have permission for the specified project
+
+### Example request
+```shell
+curl -X PUT -H 'Authentication: bearer <API_KEY>' -H 'Content-type: application/json' --data '{"name": "<DEVICE NAME>"}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/props
 ```
 
 ## Command API
@@ -133,13 +221,12 @@ The endpoint takes a json formatted object with the keys:
 - **400** Client submitted invalid data, see error key in the response
 - **401** Unauthorized - Client is not authenticated
 - **403** Forbidden - Client does not have permission for the specified project or device
-- **500** Server error
 
 
 ### Example request
 
 ```shell
-curl -H 'Authentication: bearer <API KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/command
+curl -H 'Authentication: bearer <API_KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/command
 ```
 
 ## Message history API
@@ -157,7 +244,7 @@ The endpoint takes two optional parameters sent as query string:
 ### Response
 
 - **200** OK
-  - the response body contains the list of retrieved messages in json format 
+  - the response body contains the list of retrieved messages in json format
     ```json
     {
       "status": 200,
@@ -213,12 +300,11 @@ The endpoint takes two optional parameters sent as query string:
 - **400** Client submitted invalid data, see error key in the response
 - **401** Client is not authenticated
 - **403** Client does not have permission for the specified project or device
-- **500** Server Error
 
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/messages/<DEVICE_ID>
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/messages/<DEVICE_ID>
 ```
 
 
@@ -229,7 +315,7 @@ __GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated`
 
 ### Request parameters
 
-- **p**: page number to be retrieved 
+- **p**: page number to be retrieved
 - **l**: the number of results in each page (_default 50, min 1, max 100_)
 - **type**: filter messages by type, one of **all  userdefined \| iottlyagent**
 - **from**: a timestamp represents the left limit for the desired temporal range (**left limit included**)
@@ -238,33 +324,33 @@ __GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated`
 
 ### Response
 - **200** OK
-  - the response body contains the list of retrieved messages in json format 
+  - the response body contains the list of retrieved messages in json format
     ```json
     {
         "messages": [
           {
-            "from": "3781de91-d446-4c64-825d-756dd60f2dab", 
-            "timestamp": "2018-07-27T17:50:04.968", 
-            "to": "59c19cacecc01400075f3bc9", 
-            "devicetimestamp": "2018-07-27T17:49:51", 
-            "type": "userdefined", 
+            "from": "3781de91-d446-4c64-825d-756dd60f2dab",
+            "timestamp": "2018-07-27T17:50:04.968",
+            "to": "59c19cacecc01400075f3bc9",
+            "devicetimestamp": "2018-07-27T17:49:51",
+            "type": "userdefined",
             "payload": {
                 ...
             }
-          }, 
+          },
           {
-            "from": "3781de91-d446-4c64-825d-756dd60f2dab", 
-            "timestamp": "2018-07-27T17:50:04.967", 
-            "to": "59c19cacecc01400075f3bc9", 
-            "devicetimestamp": "2018-07-27T17:49:51", 
-            "type": "userdefined", 
+            "from": "3781de91-d446-4c64-825d-756dd60f2dab",
+            "timestamp": "2018-07-27T17:50:04.967",
+            "to": "59c19cacecc01400075f3bc9",
+            "devicetimestamp": "2018-07-27T17:49:51",
+            "type": "userdefined",
             "payload": {
                 ...
             }
           }
         ]
      }
-    
+
     ```  
     Each message has the following keys:
     - **from**: the UUID of the device that sent the message
@@ -273,15 +359,14 @@ __GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated`
     - **type**: one of *iottlyagent* \| *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
     - **payload**: contains the message as produced by the device (_its content depends on the message type and is a json object)_
 
-- **400** Invalid custom query 
+- **400** Invalid custom query
   - invalid query submitted by the client (_see the limit values of the parameters and its type_)
 - **401** Client is not authenticated
 - **403** Client does not have permission for the specified project
 - **404** No messages retrieved with the specified parameters
-- **500** Server Error
 
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated
+curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/messages/paginated
 ```
