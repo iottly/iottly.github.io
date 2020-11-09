@@ -21,6 +21,7 @@ __Table of content__
 >- **[License inspection API](#license-inspection-api)**
 >- **[Command API](#command-api)**
 >- **[Message history API](#message-history-api)**
+>- **[Paginated messages API](#paginated-messages-api)**
 
 
 ## Project inspection API
@@ -141,7 +142,6 @@ The endpoint takes a json formatted object with the keys:
 curl -H 'Authentication: bearer <API KEY>' -H 'Content-Type: application/json' --data '{"cmd_type": "echo", "values": {"echo.content": "hi there!"}}' https://api.cloud.iottly.com/v1.0/project/<PROJECT ID>/device/<DEVICE ID>/command
 ```
 
-
 ## Message history API
 
 Get the messages sent by a device _(from the newest to the oldest)_
@@ -219,4 +219,69 @@ The endpoint takes two optional parameters sent as query string:
 ### Example request
 ```shell
 curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/messages/<device id>
+```
+
+
+## Paginated messages API
+Get a specific number of messages sent by a device (_page by page and with the possibility of filtering them_)
+
+__GET__ `project/<PROJECT ID>/device/<DEVICE ID>/messages/paginated`
+
+### Request parameters
+
+- **p**: Page number to be retrieved 
+- **l**: The number of results in each page (_default 50, min 1, max 100_)
+- **type**: Filter messages by type, one of **all | userdefined | iottlyagent**
+- **from**: A timestamp represents the left limit for the desired temporal range (**left limit included**)
+- **to**: A timestamp represents the right limit for the desired temporal range (**right limit excluded**)
+- **sort**: One of **asc | desc**, sort the results in ascending/descending temporal order (_default desc_)
+
+### Response
+- **200** OK
+  - the response body contains the list of retrieved messages in json format 
+    ```json
+    {
+        "messages": [
+          {
+            "from": "3781de91-d446-4c64-825d-756dd60f2dab", 
+            "timestamp": "2018-07-27T17:50:04.968", 
+            "to": "59c19cacecc01400075f3bc9", 
+            "devicetimestamp": "2018-07-27T17:49:51", 
+            "type": "userdefined", 
+            "payload": {
+                ...
+            }
+          }, 
+          {
+            "from": "3781de91-d446-4c64-825d-756dd60f2dab", 
+            "timestamp": "2018-07-27T17:50:04.967", 
+            "to": "59c19cacecc01400075f3bc9", 
+            "devicetimestamp": "2018-07-27T17:49:51", 
+            "type": "userdefined", 
+            "payload": {
+                ...
+            }
+          }
+        ]
+     }
+    
+    ```  
+    Each message has the following keys:
+    - **from**: the UUID of the device that sent the message
+    - **to**:  the ID of the project where the device is registered
+    - **devicetimestamp**: the device timestamp of the message encoded as MongoDB `jsonb Date type`
+    - **type**: one of *iottlyagent* | *userdefined*. Used to distinguish messages from the iottly agent and from the user-defined firmware
+    - **payload**: contains the message as produced by the device (_its content depends on the message type and is a json object)_
+
+- **400** Invalid custom query 
+  - invalid query submitted by the client (_see the limit values of the parameters and its type_)
+- **401** Client is not authenticated
+- **403** Client does not have permission for the specified project
+- **404** No messages retrieved with the specified parameters
+- **500** Server Error
+
+
+### Example request
+```shell
+curl -H 'Authentication: bearer <API KEY>' https://api.cloud.iottly.com/v1.0/project/<project id>/device/<device id>/messages/paginated
 ```
