@@ -216,7 +216,7 @@ __PUT__ `project/<PROJECT_ID>/device/<DEVICE_ID>/props`
 
 ### Example request
 ```shell
-curl -H 'Authentication: bearer <API_KEY>' -H 'Content-type: application/json' --data '{"name": "<DEVICE NAME>"}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/props
+curl -X PUT -H 'Authentication: bearer <API_KEY>' -H 'Content-type: application/json' --data '{"name": "<DEVICE NAME>"}' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/props
 ```
 
 ## Command API
