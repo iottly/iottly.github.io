@@ -104,8 +104,8 @@ __GET__ `project/<PROJECT_ID>/license/[<LICENSE_ID>]`
 curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/license
 ```
 
-
-## Device properties API - show
+## Device properties API
+### Device properties API - show
 
 Get detailed information for each __device__ in your __iottly project__
 
@@ -184,7 +184,7 @@ Single device
 curl -H 'Authentication: bearer <API_KEY>' https://api.cloud.iottly.com/v1.0/project/<PROJECT_ID>/device/<DEVICE_ID>/props
 ```
 
-## Device properties API - edit
+### Device properties API - edit
 
 Edit properties of one __device__ in your __iottly project__
 
