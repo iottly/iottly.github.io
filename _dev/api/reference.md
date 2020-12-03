@@ -93,8 +93,8 @@ __GET__ `project/<PROJECT_ID>/license/[<LICENSE_ID>]`
     }
   }
   ```
-  - **401** Unauthorized - Client is not authenticated
-  - **403** Forbidden - Client does not have permission for the specified project
+- **401** Unauthorized - Client is not authenticated
+- **403** Forbidden - Client does not have permission for the specified project
 
 ### Example request
 ```shell
@@ -147,8 +147,8 @@ __GET__ `project/<PROJECT_ID>/device/<DEVICE_ID>/props` for one device
     "ID": "<the device's unique ID>",
   }
   ```
-  - **401** Unauthorized - Client is not authenticated
-  - **403** Forbidden - Client does not have permission for the specified project
+- **401** Unauthorized - Client is not authenticated
+- **403** Forbidden - Client does not have permission for the specified project
 
 ### Example request
 
@@ -182,9 +182,9 @@ __PUT__ `project/<PROJECT_ID>/device/<DEVICE_ID>/props`
     "ID": "<the device's unique ID>",
   }
   ```
-  - **400** Bad request - The request is malformed
-  - **401** Unauthorized - Client is not authenticated
-  - **403** Forbidden - Client does not have permission for the specified project
+- **400** Bad request - The request is malformed
+- **401** Unauthorized - Client is not authenticated
+- **403** Forbidden - Client does not have permission for the specified project
 
 ### Example request
 ```shell
